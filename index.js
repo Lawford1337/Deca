@@ -72,6 +72,20 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.column').forEach(el => {
+document.querySelectorAll('.column, .card').forEach(el => {
     observer.observe(el);
+});
+
+// Form validation example
+document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Add your form validation logic here
+        const formData = new FormData(this);
+        console.log('Form submitted!', Object.fromEntries(formData));
+        
+        // Show success message (example)
+        alert('Form submitted successfully!');
+    });
 });
