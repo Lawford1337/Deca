@@ -218,3 +218,6 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('🚀 Deca Framework loaded successfully!');
+  document.getElementById('viewDemoBtn').addEventListener('click', function() {
+    window.location.href = 'example-dashboard.html';
+  });
