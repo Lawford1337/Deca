@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deca - Modern UI Framework</title>
+    <meta name="description" content="Deca - Modern, lightweight UI framework for building beautiful, responsive interfaces">
+    <title>Deca Framework - Modern UI Framework</title>
     <link rel="stylesheet" href="./style/styles.css">
 </head>
 <body>
@@ -18,21 +19,11 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li class="has-submenu">
-                    <a href="#components">Components</a>
-                    <ul class="submenu">
-                        <li><a href="#buttons">Buttons</a></li>
-                        <li><a href="#cards">Cards</a></li>
-                        <li><a href="#forms">Forms</a></li>
-                        <li><a href="#alerts">Alerts</a></li>
-                        <li><a href="#badges">Badges</a></li>
-                        <li><a href="#grid">Grid System</a></li>
-                        <li><a href="#navigation">Navigation</a></li>
-                        <li><a href="#hero">Hero Section</a></li>
-                    </ul>
-                </li>
-                <li><a href="#examples">Documentation</a></li>
-                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#components">Components</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="components-reference.html">Docs</a></li>
+                <li><a href="https://github.com" class="btn btn-primary btn-sm">GitHub</a></li>
             </ul>
         </div>
     </nav>
@@ -43,15 +34,36 @@
             <h1>Build Beautiful Interfaces</h1>
             <p>Deca is a modern, lightweight UI framework designed for developers who value simplicity and elegance. Create stunning, responsive interfaces with minimal effort.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary">Get Started</button>
-                <button class="btn btn-secondary">View on GitHub</button>
+                <button class="btn btn-primary btn-lg">Get Started</button>
+                <button class="btn btn-secondary btn-lg">View on GitHub</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section style="background: var(--deca-dark); color: var(--deca-white); padding: 3rem 2rem;">
+        <div class="docs">
+            <div class="columns" style="text-align: center;">
+                <div>
+                    <h3 style="font-size: 3rem; font-weight: 900; color: var(--deca-primary); margin-bottom: 0.5rem;">&lt;15KB</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Minified CSS</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 3rem; font-weight: 900; color: var(--deca-primary); margin-bottom: 0.5rem;">50+</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Components</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 3rem; font-weight: 900; color: var(--deca-primary); margin-bottom: 0.5rem;">100%</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Responsive</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Features -->
-    <section class="docs">
+    <section class="docs" id="features">
         <h2 class="section-title">Why Choose Deca?</h2>
+        <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); max-width: 700px; margin: -2rem auto 4rem;">Built with modern web standards and best practices in mind</p>
         
         <div class="columns">
             <div class="column">
@@ -71,23 +83,58 @@
                 <h3>Customizable</h3>
                 <p>Easy-to-use CSS variables and modular components let you create your unique brand identity.</p>
             </div>
+
+            <div class="column">
+                <div class="column-icon">♿</div>
+                <h3>Accessible</h3>
+                <p>Built with WCAG 2.1 guidelines. Semantic HTML and keyboard navigation included by default.</p>
+            </div>
+
+            <div class="column">
+                <div class="column-icon">🔧</div>
+                <h3>No Dependencies</h3>
+                <p>Pure CSS and vanilla JavaScript. No jQuery, no React, no build tools required.</p>
+            </div>
+
+            <div class="column">
+                <div class="column-icon">📚</div>
+                <h3>Well Documented</h3>
+                <p>Comprehensive documentation with live examples and best practices to get you started.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Components Documentation -->
-    <section class="docs" id="components">
-        <h2 class="section-title">Components</h2>
+    <!-- Quick Start -->
+    <section style="background: var(--deca-light); padding: 5rem 2rem;">
+        <div class="docs">
+            <h2 class="section-title">Quick Start</h2>
+            <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); margin-bottom: 2rem;">Get started with Deca in seconds</p>
 
-        <!-- Buttons Component -->
-        <div class="component-section" id="buttons">
-            <div class="component-header">
-                <h3 class="component-title">🔘 Buttons</h3>
-                <p class="component-description">Versatile button styles for all your interface needs. Available in multiple variants and sizes.</p>
+            <div class="code-section">
+                <h4 class="code-title">Include via CDN (Coming Soon)</h4>
+                <pre><code><span class="comment">&lt;!-- CSS --&gt;</span>
+<span class="keyword">&lt;link</span> <span class="function">rel</span>=<span class="string">"stylesheet"</span> <span class="function">href</span>=<span class="string">"https://cdn.deca.com/v1.0.0/deca.min.css"</span><span class="keyword">&gt;</span>
+
+<span class="comment">&lt;!-- JavaScript --&gt;</span>
+<span class="keyword">&lt;script</span> <span class="function">src</span>=<span class="string">"https://cdn.deca.com/v1.0.0/deca.min.js"</span><span class="keyword">&gt;&lt;/script&gt;</span></code></pre>
             </div>
-            
-            <div class="component-content">
-                <h4 class="subsection-title">Button Variants</h4>
-                <div class="demo-box">
+
+            <div class="alert alert-info" style="max-width: 900px; margin: 2rem auto 0;">
+                <strong>💡 Pro Tip:</strong> Download the source files and customize the CSS variables to match your brand!
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Preview -->
+    <section class="docs" id="components">
+        <h2 class="section-title">Beautiful Components</h2>
+        <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); max-width: 700px; margin: -2rem auto 4rem;">Over 50 pre-built components ready to use</p>
+
+        <!-- Buttons Demo -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-content">
+                <h3 style="margin-bottom: 1.5rem;">Buttons</h3>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
                     <button class="btn btn-primary">Primary</button>
                     <button class="btn btn-secondary">Secondary</button>
                     <button class="btn btn-success">Success</button>
@@ -95,297 +142,100 @@
                     <button class="btn btn-warning">Warning</button>
                     <button class="btn btn-info">Info</button>
                 </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary"</span><span class="keyword">&gt;</span>Primary<span class="keyword">&lt;/button&gt;</span>
-<span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-secondary"</span><span class="keyword">&gt;</span>Secondary<span class="keyword">&lt;/button&gt;</span>
-<span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-success"</span><span class="keyword">&gt;</span>Success<span class="keyword">&lt;/button&gt;</span></code></pre>
-                </div>
-
-                <h4 class="subsection-title">Button Sizes</h4>
-                <div class="demo-box">
-                    <button class="btn btn-primary btn-sm">Small</button>
-                    <button class="btn btn-primary">Medium</button>
-                    <button class="btn btn-primary btn-lg">Large</button>
-                </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary btn-sm"</span><span class="keyword">&gt;</span>Small<span class="keyword">&lt;/button&gt;</span>
-<span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary"</span><span class="keyword">&gt;</span>Medium<span class="keyword">&lt;/button&gt;</span>
-<span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary btn-lg"</span><span class="keyword">&gt;</span>Large<span class="keyword">&lt;/button&gt;</span></code></pre>
-                </div>
             </div>
         </div>
 
-        <!-- Cards Component -->
-        <div class="component-section" id="cards">
-            <div class="component-header">
-                <h3 class="component-title">🃏 Cards</h3>
-                <p class="component-description">Flexible content containers with multiple variants and optional headers, footers, and images.</p>
-            </div>
-            
-            <div class="component-content">
-                <div class="columns">
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop" alt="Card" class="card-image">
-                        <div class="card-content">
-                            <h4>Card with Image</h4>
-                            <p>Perfect for blog posts, products, or any content showcase with visual elements.</p>
-                            <button class="btn btn-primary btn-sm">Read More</button>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-content">
-                            <h4>Simple Card</h4>
-                            <p>Great for displaying text content, notifications, or feature lists without images.</p>
-                            <button class="btn btn-secondary btn-sm">Learn More</button>
-                        </div>
-                    </div>
-
-                    <div class="card card-featured">
-                        <div class="card-content">
-                            <span class="badge badge-primary">Featured</span>
-                            <h4>Premium Card</h4>
-                            <p>Highlight important content with featured card styles and badge support.</p>
-                            <button class="btn btn-primary btn-sm">Get Started</button>
-                        </div>
-                    </div>
+        <!-- Alerts Demo -->
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-content">
+                <h3 style="margin-bottom: 1.5rem;">Alerts</h3>
+                <div class="alert alert-success" style="margin-bottom: 1rem;">
+                    <strong>Success!</strong> Your action completed successfully.
                 </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"card"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;img</span> <span class="function">src</span>=<span class="string">"image.jpg"</span> <span class="function">class</span>=<span class="string">"card-image"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"card-content"</span><span class="keyword">&gt;</span>
-    <span class="keyword">&lt;h4&gt;</span>Card Title<span class="keyword">&lt;/h4&gt;</span>
-    <span class="keyword">&lt;p&gt;</span>Description<span class="keyword">&lt;/p&gt;</span>
-    <span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary"</span><span class="keyword">&gt;</span>Action<span class="keyword">&lt;/button&gt;</span>
-  <span class="keyword">&lt;/div&gt;</span>
-<span class="keyword">&lt;/div&gt;</span></code></pre>
+                <div class="alert alert-info" style="margin-bottom: 1rem;">
+                    <strong>Info:</strong> Here's some helpful information.
                 </div>
-            </div>
-        </div>
-
-        <!-- Forms Component -->
-        <div class="component-section" id="forms">
-            <div class="component-header">
-                <h3 class="component-title">📝 Forms</h3>
-                <p class="component-description">Beautiful form elements with consistent styling across all input types.</p>
-            </div>
-            
-            <div class="component-content">
-                <div style="max-width: 600px;">
-                    <form class="form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="you@example.com">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="Your message..."></textarea>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="checkbox">
-                                <input type="checkbox">
-                                <span>I agree to the terms and conditions</span>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Submit Form</button>
-                    </form>
-                </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;form</span> <span class="function">class</span>=<span class="string">"form"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"form-group"</span><span class="keyword">&gt;</span>
-    <span class="keyword">&lt;label&gt;</span>Full Name<span class="keyword">&lt;/label&gt;</span>
-    <span class="keyword">&lt;input</span> <span class="function">type</span>=<span class="string">"text"</span> <span class="function">class</span>=<span class="string">"form-control"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;/div&gt;</span>
-  <span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary"</span><span class="keyword">&gt;</span>Submit<span class="keyword">&lt;/button&gt;</span>
-<span class="keyword">&lt;/form&gt;</span></code></pre>
-                </div>
-            </div>
-        </div>
-
-        <!-- Alerts Component -->
-        <div class="component-section" id="alerts">
-            <div class="component-header">
-                <h3 class="component-title">⚠️ Alerts</h3>
-                <p class="component-description">Contextual feedback messages for typical user actions with color-coded importance levels.</p>
-            </div>
-            
-            <div class="component-content">
-                <div class="alert alert-success">
-                    <strong>Success!</strong> Your operation completed successfully.
-                </div>
-                <div class="alert alert-info">
-                    <strong>Info:</strong> Here's some helpful information for you.
-                </div>
-                <div class="alert alert-warning">
-                    <strong>Warning!</strong> Please check this important notice.
+                <div class="alert alert-warning" style="margin-bottom: 1rem;">
+                    <strong>Warning!</strong> Please check this notice.
                 </div>
                 <div class="alert alert-danger">
-                    <strong>Error!</strong> Something went wrong. Please try again.
-                </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"alert alert-success"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;strong&gt;</span>Success!<span class="keyword">&lt;/strong&gt;</span> Message
-<span class="keyword">&lt;/div&gt;</span></code></pre>
+                    <strong>Error!</strong> Something went wrong.
                 </div>
             </div>
         </div>
 
-        <!-- Badges Component -->
-        <div class="component-section" id="badges">
-            <div class="component-header">
-                <h3 class="component-title">🏷️ Badges</h3>
-                <p class="component-description">Small count and labeling components for highlighting information.</p>
-            </div>
-            
-            <div class="component-content">
-                <div class="demo-box">
-                    <span class="badge badge-primary">Primary</span>
-                    <span class="badge badge-secondary">Secondary</span>
-                    <span class="badge badge-success">Success</span>
-                    <span class="badge badge-danger">Danger</span>
-                    <span class="badge badge-warning">Warning</span>
-                    <span class="badge badge-info">Info</span>
-                </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;span</span> <span class="function">class</span>=<span class="string">"badge badge-primary"</span><span class="keyword">&gt;</span>Primary<span class="keyword">&lt;/span&gt;</span>
-<span class="keyword">&lt;span</span> <span class="function">class</span>=<span class="string">"badge badge-success"</span><span class="keyword">&gt;</span>Success<span class="keyword">&lt;/span&gt;</span></code></pre>
-                </div>
-            </div>
-        </div>
-
-        <!-- Grid System Component -->
-        <div class="component-section" id="grid">
-            <div class="component-header">
-                <h3 class="component-title">📊 Grid System</h3>
-                <p class="component-description">Responsive grid layout system with flexible columns that adapt to any screen size.</p>
-            </div>
-            
-            <div class="component-content">
-                <h4 class="subsection-title">Auto-fit Columns</h4>
-                <div class="columns">
-                    <div class="column grid-demo">Column 1</div>
-                    <div class="column grid-demo">Column 2</div>
-                    <div class="column grid-demo">Column 3</div>
-                </div>
-
-                <h4 class="subsection-title">Two Columns</h4>
-                <div class="columns">
-                    <div class="column grid-demo">1/2</div>
-                    <div class="column grid-demo">1/2</div>
-                </div>
-
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"columns"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"column"</span><span class="keyword">&gt;</span>Content<span class="keyword">&lt;/div&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"column"</span><span class="keyword">&gt;</span>Content<span class="keyword">&lt;/div&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"column"</span><span class="keyword">&gt;</span>Content<span class="keyword">&lt;/div&gt;</span>
-<span class="keyword">&lt;/div&gt;</span></code></pre>
-                </div>
-            </div>
-        </div>
-
-        <!-- Navigation Component -->
-        <div class="component-section" id="navigation">
-            <div class="component-header">
-                <h3 class="component-title">🧭 Navigation</h3>
-                <p class="component-description">Responsive navigation bar with mobile menu toggle.</p>
-            </div>
-            
-            <div class="component-content">
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;nav&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"nav-container"</span><span class="keyword">&gt;</span>
-    <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"logo"</span><span class="keyword">&gt;</span>Brand<span class="keyword">&lt;/div&gt;</span>
-    <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"menu-toggle"</span><span class="keyword">&gt;</span>
-      <span class="keyword">&lt;span&gt;&lt;/span&gt;</span>
-      <span class="keyword">&lt;span&gt;&lt;/span&gt;</span>
-      <span class="keyword">&lt;span&gt;&lt;/span&gt;</span>
-    <span class="keyword">&lt;/div&gt;</span>
-    <span class="keyword">&lt;ul</span> <span class="function">class</span>=<span class="string">"nav-links"</span><span class="keyword">&gt;</span>
-      <span class="keyword">&lt;li&gt;&lt;a</span> <span class="function">href</span>=<span class="string">"#"</span><span class="keyword">&gt;</span>Link<span class="keyword">&lt;/a&gt;&lt;/li&gt;</span>
-    <span class="keyword">&lt;/ul&gt;</span>
-  <span class="keyword">&lt;/div&gt;</span>
-<span class="keyword">&lt;/nav&gt;</span></code></pre>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hero Component -->
-        <div class="component-section" id="hero">
-            <div class="component-header">
-                <h3 class="component-title">🎯 Hero Section</h3>
-                <p class="component-description">Eye-catching hero section for landing pages with gradient background.</p>
-            </div>
-            
-            <div class="component-content">
-                <div class="code-section">
-                    <h4 class="code-title">HTML</h4>
-                    <pre><code><span class="keyword">&lt;section</span> <span class="function">class</span>=<span class="string">"hero"</span><span class="keyword">&gt;</span>
-  <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"hero-content"</span><span class="keyword">&gt;</span>
-    <span class="keyword">&lt;h1&gt;</span>Your Headline<span class="keyword">&lt;/h1&gt;</span>
-    <span class="keyword">&lt;p&gt;</span>Description text<span class="keyword">&lt;/p&gt;</span>
-    <span class="keyword">&lt;div</span> <span class="function">class</span>=<span class="string">"hero-buttons"</span><span class="keyword">&gt;</span>
-      <span class="keyword">&lt;button</span> <span class="function">class</span>=<span class="string">"btn btn-primary"</span><span class="keyword">&gt;</span>Get Started<span class="keyword">&lt;/button&gt;</span>
-    <span class="keyword">&lt;/div&gt;</span>
-  <span class="keyword">&lt;/div&gt;</span>
-<span class="keyword">&lt;/section&gt;</span></code></pre>
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <!-- Examples Section -->
-    <section class="docs" id="examples">
-        <h2 class="section-title">Example Layouts</h2>
+        <!-- Cards Demo -->
         <div class="columns">
             <div class="card">
-                <div class="card-content" id="viewDemoBtn">
-                    <div class="column-icon">💼</div>
-                    <h3>Dashboard</h3>
-                    <p>Professional admin dashboard with stats, charts, and data tables.</p>
-                    <button class="btn btn-primary btn-sm 1">View Demo</button>
+                <div class="card-content">
+                    <span class="badge badge-primary" style="margin-bottom: 1rem;">New</span>
+                    <h4>Card Component</h4>
+                    <p>Flexible content containers with multiple variants.</p>
+                    <button class="btn btn-primary btn-sm">Learn More</button>
                 </div>
             </div>
-            
-            <div class="card">
-                <div class="card-content" id="LandingPage">
-                    <div class="column-icon">🛍️</div>
-                    <h3>Landing Page</h3>
-                    <p>Complete landing page with hero, features, pricing, and contact form.</p>
-                    <button class="btn btn-primary btn-sm" onclick="window.location.href='example-dashboard.html'">View Demo</button>
-                </div>
-            </div>
-            
             <div class="card">
                 <div class="card-content">
-                    <div class="column-icon">📝</div>
-                    <h3>Documentation</h3>
-                    <p>Full component reference with live examples and code snippets.</p>
-                    <button class="btn btn-primary btn-sm">View Demo</button>
+                    <span class="badge badge-success" style="margin-bottom: 1rem;">Popular</span>
+                    <h4>Grid System</h4>
+                    <p>Powerful CSS Grid and Flexbox layouts.</p>
+                    <button class="btn btn-secondary btn-sm">Learn More</button>
                 </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <span class="badge badge-info" style="margin-bottom: 1rem;">Updated</span>
+                    <h4>Utilities</h4>
+                    <p>Comprehensive utility classes available.</p>
+                    <button class="btn btn-info btn-sm">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="docs" id="examples" style="background: var(--deca-light);">
+        <h2 class="section-title">Example Layouts</h2>
+        <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); max-width: 700px; margin: -2rem auto 4rem;">See Deca in action with real-world examples</p>
+
+        <div class="columns">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop" alt="Dashboard" style="width: 100%; height: 250px; object-fit: cover;">
+                <div class="card-content">
+                    <h4>Dashboard Example</h4>
+                    <p>Professional admin dashboard with stats, charts, and data tables.</p>
+                    <button class="btn btn-primary" onclick="window.location.href='example-dashboard.html'">View Demo →</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=300&fit=crop" alt="Landing Page" style="width: 100%; height: 250px; object-fit: cover;">
+                <div class="card-content">
+                    <h4>Landing Page</h4>
+                    <p>Complete landing page with hero, features, pricing, and forms.</p>
+                    <button class="btn btn-primary" onclick="window.location.href='example-landing.html'">View Demo →</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=600&h=300&fit=crop" alt="Documentation" style="width: 100%; height: 250px; object-fit: cover;">
+                <div class="card-content">
+                    <h4>Documentation</h4>
+                    <p>Full component reference with live examples and code snippets.</p>
+                    <button class="btn btn-primary" onclick="window.location.href='components-reference.html'">View Demo →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="background: linear-gradient(135deg, var(--deca-primary), var(--deca-secondary)); padding: 5rem 2rem; text-align: center; color: var(--deca-white);">
+        <div class="docs">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--deca-white);">Ready to Get Started?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Join thousands of developers building amazing interfaces with Deca</p>
+            <div class="hero-buttons">
+                <button class="btn btn-lg" style="background: var(--deca-white); color: var(--deca-primary);">Download Now</button>
+                <button class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: var(--deca-white); border: 2px solid var(--deca-white);">Documentation</button>
             </div>
         </div>
     </section>
@@ -399,36 +249,38 @@
             </div>
             
             <div class="footer-section">
-                <h4>Components</h4>
+                <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#buttons">Buttons</a></li>
-                    <li><a href="#cards">Cards</a></li>
-                    <li><a href="#forms">Forms</a></li>
-                    <li><a href="#alerts">Alerts</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#components">Components</a></li>
+                    <li><a href="components-reference.html">Documentation</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
                 <h4>Resources</h4>
                 <ul>
-                    <li><a href="#github">GitHub</a></li>
+                    <li><a href="https://github.com">GitHub</a></li>
                     <li><a href="#examples">Examples</a></li>
-                    <li><a href="#community">Community</a></li>
+                    <li><a href="#">Changelog</a></li>
+                    <li><a href="#">Contributing</a></li>
                 </ul>
             </div>
             
             <div class="footer-section">
-                <h4>Connect</h4>
+                <h4>Community</h4>
                 <ul>
-                    <li><a href="#twitter">Twitter</a></li>
-                    <li><a href="#discord">Discord</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Discord</a></li>
+                    <li><a href="#">Stack Overflow</a></li>
+                    <li><a href="#">Contact</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Deca Framework. Built with ❤️ for developers.</p>
+            <p>&copy; 2025 Deca Framework v1.0.0 • Built with ❤️ for developers</p>
         </div>
     </footer>
 
