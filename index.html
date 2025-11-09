@@ -4,26 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Deca - Modern, lightweight UI framework for building beautiful, responsive interfaces">
+    <meta name="keywords" content="UI framework, CSS framework, responsive design, web components">
     <title>Deca Framework - Modern UI Framework</title>
     <link rel="stylesheet" href="./style/styles.css">
+    <style>
+        /* Additional styles for enhanced index */
+                .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            color: white;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stats-bar {
+            background: var(--deca-gray-900);
+            color: white;
+            padding: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-showcase {
+            padding: 5rem 2rem;
+            background: linear-gradient(to bottom, white, var(--deca-gray-50));
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .feature-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--deca-primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--deca-primary-hover);
+            transform: translateY(-3px);
+        }
+
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3, .card-content h4 {
+            margin: 0 0 1rem 0;
+            color: var(--deca-gray-900);
+        }
+
+        .card-content p {
+            color: var(--deca-gray-600);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--deca-gray-900);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .docs {
+            padding: 3rem 0;
+        }
+
+        nav {
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        nav a:hover {
+            color: var(--deca-primary) !important;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex !important;
+            }
+            
+            nav ul {
+                display: none !important;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex !important;
+            }
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        .code-demo {
+            background: var(--deca-gray-900);
+            color: var(--deca-gray-100);
+            padding: 2rem;
+            border-radius: 1rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .code-demo pre {
+            margin: 0;
+            overflow-x: auto;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+        }
+
+        .copy-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .copy-button.copied {
+            background: var(--deca-success);
+            border-color: var(--deca-success);
+        }
+        .footer-content {
+            background: var(--deca-gray-900);
+            color: white;
+            padding: 3rem 2rem 1rem 2rem;
+        }
+        .footer-bottom {
+            background: black;
+            color: var(--deca-gray-100);
+            text-align: center;
+            padding: 1rem 2rem;
+            font-size: 0.875rem;
+            font-size: large;
+        }
+        .columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+    </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Deca</div>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav style="background: white; padding: 1rem 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center;">
+            <div style="font-size: 1.5rem; font-weight: 900; color: var(--deca-primary);">Deca</div>
+            <div class="menu-toggle" style="display: none; flex-direction: column; gap: 4px; cursor: pointer;">
+                <span style="width: 25px; height: 3px; background: var(--deca-gray-900); transition: all 0.3s;"></span>
+                <span style="width: 25px; height: 3px; background: var(--deca-gray-900); transition: all 0.3s;"></span>
+                <span style="width: 25px; height: 3px; background: var(--deca-gray-900); transition: all 0.3s;"></span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#components">Components</a></li>
-                <li><a href="#examples">Examples</a></li>
-                <li><a href="components-reference.html">Docs</a></li>
-                <li><a href="https://github.com" class="btn btn-primary btn-sm">GitHub</a></li>
+            <ul style="display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; align-items: center;">
+                <li><a href="#home" style="text-decoration: none; color: var(--deca-gray-700); font-weight: 500; transition: color 0.3s;">Home</a></li>
+                <li><a href="#features" style="text-decoration: none; color: var(--deca-gray-700); font-weight: 500; transition: color 0.3s;">Features</a></li>
+                <li><a href="#components" style="text-decoration: none; color: var(--deca-gray-700); font-weight: 500; transition: color 0.3s;">Components</a></li>
+                <li><a href="#examples" style="text-decoration: none; color: var(--deca-gray-700); font-weight: 500; transition: color 0.3s;">Examples</a></li>
+                <li><a href="components-reference.html" style="text-decoration: none; color: var(--deca-gray-700); font-weight: 500; transition: color 0.3s;">Docs</a></li>
+                <li><a href="https://github.com" target="_blank" class="btn btn-primary btn-sm">GitHub</a></li>
             </ul>
         </div>
     </nav>
@@ -31,211 +345,254 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Build Beautiful Interfaces</h1>
-            <p>Deca is a modern, lightweight UI framework designed for developers who value simplicity and elegance. Create stunning, responsive interfaces with minimal effort.</p>
+            <h1>Build Beautiful Interfaces Faster</h1>
+            <p>Deca is a modern, lightweight UI framework designed for developers who value simplicity, elegance, and performance. Create stunning, responsive interfaces with minimal effort.</p>
             <div class="hero-buttons">
-                <button class="btn btn-primary btn-lg">Get Started</button>
-                <button class="btn btn-secondary btn-lg">View on GitHub</button>
+                <button class="btn btn-primary btn-lg">Get Started →</button>
+                <button class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">View Documentation</button>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section style="background: var(--deca-dark); color: var(--deca-white); padding: 3rem 2rem;">
-        <div class="docs">
-            <div class="columns" style="text-align: center;">
-                <div>
-                    <h3 style="font-size: 3rem; font-weight: 900; color: var(--deca-primary); margin-bottom: 0.5rem;">&lt;15KB</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Minified CSS</p>
-                </div>
-                <div>
-                    <h3 style="font-size: 3rem; font-weight: 900; color: var(--deca-primary); margin-bottom: 0.5rem;">50+</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Components</p>
-                </div>
-                <div>
-                    <h3 style="font-size: 3rem; font-weight: 900; color: var(--deca-primary); margin-bottom: 0.5rem;">100%</h3>
-                    <p style="color: rgba(255,255,255,0.8);">Responsive</p>
-                </div>
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>&lt;15KB</h3>
+                <p>Minified CSS</p>
+            </div>
+            <div class="stat-item">
+                <h3>50+</h3>
+                <p>Components</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Responsive</p>
+            </div>
+            <div class="stat-item">
+                <h3>0</h3>
+                <p>Dependencies</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Features -->
-    <section class="docs" id="features">
-        <h2 class="section-title">Why Choose Deca?</h2>
-        <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); max-width: 700px; margin: -2rem auto 4rem;">Built with modern web standards and best practices in mind</p>
-        
-        <div class="columns">
-            <div class="column">
-                <div class="column-icon">🚀</div>
-                <h3>Lightning Fast</h3>
-                <p>Optimized for performance with minimal bundle size. Load times that your users will love.</p>
-            </div>
-            
-            <div class="column">
-                <div class="column-icon">📱</div>
-                <h3>Fully Responsive</h3>
-                <p>Mobile-first design approach ensures your layouts look perfect on any device or screen size.</p>
-            </div>
-            
-            <div class="column">
-                <div class="column-icon">🎨</div>
-                <h3>Customizable</h3>
-                <p>Easy-to-use CSS variables and modular components let you create your unique brand identity.</p>
-            </div>
+    <!-- Features Showcase -->
+    <section class="feature-showcase" id="features">
+        <div class="container">
+            <h2 class="section-title text-center">Why Choose Deca?</h2>
+            <p class="text-center text-lg" style="max-width: 700px; margin: -1rem auto 3rem; color: var(--deca-gray-600);">
+                Built with modern web standards and best practices in mind
+            </p>
 
-            <div class="column">
-                <div class="column-icon">♿</div>
-                <h3>Accessible</h3>
-                <p>Built with WCAG 2.1 guidelines. Semantic HTML and keyboard navigation included by default.</p>
-            </div>
+            <div class="feature-grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Optimized for performance with minimal bundle size. Load times that your users will love. No bloat, just pure speed.</p>
+                </div>
 
-            <div class="column">
-                <div class="column-icon">🔧</div>
-                <h3>No Dependencies</h3>
-                <p>Pure CSS and vanilla JavaScript. No jQuery, no React, no build tools required.</p>
-            </div>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile First</h3>
+                    <p>Fully responsive design that looks perfect on any device. From smartphones to 4K displays, your content adapts beautifully.</p>
+                </div>
 
-            <div class="column">
-                <div class="column-icon">📚</div>
-                <h3>Well Documented</h3>
-                <p>Comprehensive documentation with live examples and best practices to get you started.</p>
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Highly Customizable</h3>
+                    <p>Easy-to-use CSS variables and modular components let you create your unique brand identity with minimal effort.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">♿</div>
+                    <h3>Accessible</h3>
+                    <p>Built with WCAG 2.1 guidelines in mind. Semantic HTML, ARIA labels, and keyboard navigation included by default.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">🔧</div>
+                    <h3>No Dependencies</h3>
+                    <p>Pure CSS and vanilla JavaScript. No jQuery, no React, no build tools required. Just include and start building.</p>
+                </div>
+
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-icon">📚</div>
+                    <h3>Well Documented</h3>
+                    <p>Comprehensive documentation with live examples, code snippets, and best practices to get you started quickly.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Quick Start -->
-    <section style="background: var(--deca-light); padding: 5rem 2rem;">
-        <div class="docs">
-            <h2 class="section-title">Quick Start</h2>
-            <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); margin-bottom: 2rem;">Get started with Deca in seconds</p>
+    <section class="docs" style="background: white; padding: 5rem 2rem;">
+        <div class="container" style="max-width: 900px;">
+            <h2 class="section-title text-center">Quick Start</h2>
+            <p class="text-center text-lg mb-8" style="color: var(--deca-gray-600);">
+                Get started with Deca in seconds
+            </p>
 
-            <div class="code-section">
-                <h4 class="code-title">Include via CDN (Coming Soon)</h4>
-                <pre><code><span class="comment">&lt;!-- CSS --&gt;</span>
-<span class="keyword">&lt;link</span> <span class="function">rel</span>=<span class="string">"stylesheet"</span> <span class="function">href</span>=<span class="string">"https://cdn.deca.com/v1.0.0/deca.min.css"</span><span class="keyword">&gt;</span>
+            <div class="code-demo">
+                <button class="copy-button" data-copy='<link rel="stylesheet" href="https://cdn.deca.com/v1.0.0/deca.min.css">'>Copy</button>
+                <pre><code><span style="color: #6b7280;">/* Include CSS */</span>
+<span style="color: #8b5cf6;">&lt;link</span> <span style="color: #10b981;">rel</span>=<span style="color: #f59e0b;">"stylesheet"</span> <span style="color: #10b981;">href</span>=<span style="color: #f59e0b;">"https://cdn.deca.com/v1.0.0/deca.min.css"</span><span style="color: #8b5cf6;">&gt;</span>
 
-<span class="comment">&lt;!-- JavaScript --&gt;</span>
-<span class="keyword">&lt;script</span> <span class="function">src</span>=<span class="string">"https://cdn.deca.com/v1.0.0/deca.min.js"</span><span class="keyword">&gt;&lt;/script&gt;</span></code></pre>
+<span style="color: #6b7280;">/* Include JavaScript */</span>
+<span style="color: #8b5cf6;">&lt;script</span> <span style="color: #10b981;">src</span>=<span style="color: #f59e0b;">"https://cdn.deca.com/v1.0.0/deca.min.js"</span><span style="color: #8b5cf6;">&gt;&lt;/script&gt;</span></code></pre>
             </div>
 
-            <div class="alert alert-info" style="max-width: 900px; margin: 2rem auto 0;">
-                <strong>💡 Pro Tip:</strong> Download the source files and customize the CSS variables to match your brand!
+            <div class="alert alert-info mt-8">
+                <strong>💡 Pro Tip:</strong> Download the source files and customize the CSS variables to match your brand perfectly!
             </div>
         </div>
     </section>
 
     <!-- Components Preview -->
-    <section class="docs" id="components">
-        <h2 class="section-title">Beautiful Components</h2>
-        <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); max-width: 700px; margin: -2rem auto 4rem;">Over 50 pre-built components ready to use</p>
+    <section class="docs" id="components" style="background: var(--deca-gray-50); padding: 5rem 2rem;">
+        <div class="container">
+            <h2 class="section-title text-center">Beautiful Components</h2>
+            <p class="text-center text-lg mb-8" style="color: var(--deca-gray-600);">
+                Over 50 pre-built components ready to use
+            </p>
 
-        <!-- Buttons Demo -->
-        <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-content">
-                <h3 style="margin-bottom: 1.5rem;">Buttons</h3>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                    <button class="btn btn-primary">Primary</button>
-                    <button class="btn btn-secondary">Secondary</button>
-                    <button class="btn btn-success">Success</button>
-                    <button class="btn btn-danger">Danger</button>
-                    <button class="btn btn-warning">Warning</button>
-                    <button class="btn btn-info">Info</button>
+            <!-- Buttons -->
+            <div class="card mb-8">
+                <div class="card-content">
+                    <h3 class="mb-4">Buttons</h3>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <button class="btn btn-primary">Primary</button>
+                        <button class="btn btn-secondary">Secondary</button>
+                        <button class="btn btn-success">Success</button>
+                        <button class="btn btn-danger">Danger</button>
+                        <button class="btn btn-warning">Warning</button>
+                        <button class="btn btn-info">Info</button>
+                    </div>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="btn btn-outline-primary">Outline</button>
+                        <button class="btn btn-primary btn-sm">Small</button>
+                        <button class="btn btn-primary btn-xl">Medium</button>
+                        <button class="btn btn-primary btn-lg">Large</button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Alerts Demo -->
-        <div class="card" style="margin-bottom: 2rem;">
-            <div class="card-content">
-                <h3 style="margin-bottom: 1.5rem;">Alerts</h3>
-                <div class="alert alert-success" style="margin-bottom: 1rem;">
-                    <strong>Success!</strong> Your action completed successfully.
-                </div>
-                <div class="alert alert-info" style="margin-bottom: 1rem;">
-                    <strong>Info:</strong> Here's some helpful information.
-                </div>
-                <div class="alert alert-warning" style="margin-bottom: 1rem;">
-                    <strong>Warning!</strong> Please check this notice.
-                </div>
-                <div class="alert alert-danger">
-                    <strong>Error!</strong> Something went wrong.
+            <!-- Forms -->
+            <div class="card mb-8">
+                <div class="card-content">
+                    <h3 class="mb-4">Forms</h3>
+                    <div style="max-width: 600px;">
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="3" placeholder="Your message..."></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="check1">
+                            <label class="form-check-label" for="check1">I agree to the terms</label>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Cards Demo -->
-        <div class="columns">
-            <div class="card">
+            <!-- Alerts -->
+            <div class="card mb-8">
                 <div class="card-content">
-                    <span class="badge badge-primary" style="margin-bottom: 1rem;">New</span>
-                    <h4>Card Component</h4>
-                    <p>Flexible content containers with multiple variants.</p>
-                    <button class="btn btn-primary btn-sm">Learn More</button>
+                    <h3 class="mb-4">Alerts</h3>
+                    <div class="alert alert-success mb-3">
+                        <strong>Success!</strong> Your action completed successfully.
+                    </div>
+                    <div class="alert alert-info mb-3">
+                        <strong>Info:</strong> Here's some helpful information.
+                    </div>
+                    <div class="alert alert-warning mb-3">
+                        <strong>Warning!</strong> Please check this important notice.
+                    </div>
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> Something went wrong.
+                    </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-content">
-                    <span class="badge badge-success" style="margin-bottom: 1rem;">Popular</span>
-                    <h4>Grid System</h4>
-                    <p>Powerful CSS Grid and Flexbox layouts.</p>
-                    <button class="btn btn-secondary btn-sm">Learn More</button>
+
+            <!-- Cards Grid -->
+            <div class="columns">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="badge badge-primary mb-3">New</span>
+                        <h4>Card Component</h4>
+                        <p>Flexible content containers with multiple variants and optional features.</p>
+                        <button class="btn btn-primary btn-sm">Learn More</button>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <span class="badge badge-info" style="margin-bottom: 1rem;">Updated</span>
-                    <h4>Utilities</h4>
-                    <p>Comprehensive utility classes available.</p>
-                    <button class="btn btn-info btn-sm">Learn More</button>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="badge badge-success mb-3">Popular</span>
+                        <h4>Grid System</h4>
+                        <p>Powerful CSS Grid and Flexbox layouts for responsive designs.</p>
+                        <button class="btn btn-secondary btn-sm">Learn More</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="badge badge-info mb-3">Updated</span>
+                        <h4>Utilities</h4>
+                        <p>Comprehensive utility classes for spacing, colors, and more.</p>
+                        <button class="btn btn-info btn-sm">Learn More</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Examples -->
-    <section class="docs" id="examples" style="background: var(--deca-light);">
-        <h2 class="section-title">Example Layouts</h2>
-        <p style="text-align: center; font-size: 1.125rem; color: var(--deca-gray); max-width: 700px; margin: -2rem auto 4rem;">See Deca in action with real-world examples</p>
+    <!-- Examples Section -->
+    <section class="docs" id="examples" style="padding: 5rem 2rem;">
+        <div class="container">
+            <h2 class="section-title text-center">Example Layouts</h2>
+            <p class="text-center text-lg mb-8" style="color: var(--deca-gray-600);">
+                See Deca in action with real-world examples
+            </p>
 
-        <div class="columns">
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop" alt="Dashboard" style="width: 100%; height: 250px; object-fit: cover;">
-                <div class="card-content">
-                    <h4>Dashboard Example</h4>
-                    <p>Professional admin dashboard with stats, charts, and data tables.</p>
-                    <button class="btn btn-primary" onclick="window.location.href='example-dashboard.html'">View Demo →</button>
+            <div class="columns">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Dashboard" style="width: 100%; height: 250px; object-fit: cover; border-radius: 1rem 1rem 0 0;">
+                    <div class="card-content">
+                        <h3>Dashboard</h3>
+                        <p>Professional admin dashboard with stats, charts, and data tables.</p>
+                        <button class="btn btn-primary" onclick="window.location.href='example-dashboard.html'">View Demo →</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=300&fit=crop" alt="Landing Page" style="width: 100%; height: 250px; object-fit: cover;">
-                <div class="card-content">
-                    <h4>Landing Page</h4>
-                    <p>Complete landing page with hero, features, pricing, and forms.</p>
-                    <button class="btn btn-primary" onclick="window.location.href='example-landing.html'">View Demo →</button>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=250&fit=crop" alt="Landing Page" style="width: 100%; height: 250px; object-fit: cover; border-radius: 1rem 1rem 0 0;">
+                    <div class="card-content">
+                        <h3>Landing Page</h3>
+                        <p>Complete landing page with hero, features, pricing, and contact form.</p>
+                        <button class="btn btn-primary" onclick="window.location.href='example-landing.html'">View Demo →</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=600&h=300&fit=crop" alt="Documentation" style="width: 100%; height: 250px; object-fit: cover;">
-                <div class="card-content">
-                    <h4>Documentation</h4>
-                    <p>Full component reference with live examples and code snippets.</p>
-                    <button class="btn btn-primary" onclick="window.location.href='components-reference.html'">View Demo →</button>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=400&h=250&fit=crop" alt="Documentation" style="width: 100%; height: 250px; object-fit: cover; border-radius: 1rem 1rem 0 0;">
+                    <div class="card-content">
+                        <h3>Documentation</h3>
+                        <p>Full component reference with live examples and code snippets.</p>
+                        <button class="btn btn-primary" onclick="window.location.href='components-reference.html'">View Demo →</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section style="background: linear-gradient(135deg, var(--deca-primary), var(--deca-secondary)); padding: 5rem 2rem; text-align: center; color: var(--deca-white);">
-        <div class="docs">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--deca-white);">Ready to Get Started?</h2>
+    <section style="background: linear-gradient(135deg, var(--deca-primary), var(--deca-secondary)); padding: 5rem 2rem; text-align: center; color: white;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">Ready to Get Started?</h2>
             <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">Join thousands of developers building amazing interfaces with Deca</p>
-            <div class="hero-buttons">
-                <button class="btn btn-lg" style="background: var(--deca-white); color: var(--deca-primary);">Download Now</button>
-                <button class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: var(--deca-white); border: 2px solid var(--deca-white);">Documentation</button>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn btn-lg" style="background: white; color: var(--deca-primary);">Download Now</button>
+                <button class="btn btn-lg" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white;">Read Documentation</button>
             </div>
         </div>
     </section>
@@ -245,7 +602,7 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h4>Deca Framework</h4>
-                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8;">A modern UI framework for building beautiful, responsive interfaces with ease.</p>
+                <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.8;">A modern UI framework for building beautiful, responsive interfaces with ease. Open source and free to use.</p>
             </div>
             
             <div class="footer-section">
@@ -280,10 +637,73 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Deca Framework v1.0.0 • Built with ❤️ for developers</p>
+            <p>&copy; 2025 Deca Framework v1.0.0 • Built with ❤️ for developers • MIT License</p>
         </div>
     </footer>
 
     <script src="./index.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('nav ul');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    navLi0ks.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('nav')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    }
+                });
+                
+                // Close menu when clicking links
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', function() {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.feature-card').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+            
+            // Navbar scroll effect
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -2048,7 +2048,7 @@ p {
     transform: translateY(-1px);
 }
 
-.btn-light {
+.btn-light {    
     background-color: var(--deca-gray-100);
     color: var(--deca-gray-900);
     border-color: var(--deca-gray-300);
