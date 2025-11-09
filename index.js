@@ -224,3 +224,4 @@ console.log('🚀 Deca Framework loaded successfully!');
   document.getElementById('LandingPage').addEventListener('click', function() {
     window.location.href = 'example-landing.html';
   });
+/* ========== КОНЕЦ INDEX.JS ========== */
