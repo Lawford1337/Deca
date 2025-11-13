@@ -841,6 +841,180 @@
             </div>
         </section>
 
+<section id="spacing" class="component-section">
+            <div class="section-header">
+                <span class="section-icon">📏</span>
+                <h2 class="section-title">Spacing</h2>
+            </div>
+            <p class="section-description">Утилиты для быстрого управления отступами (margin) и внутренними полями (padding).</p>
+            
+            <div class="info-box">
+                <div class="info-box-title">💡 Соглашение об именах</div>
+                <p>Утилиты интервалов используют простой формат: <code>{property}{sides}-{size}</code>.</p>
+                <ul style="color: rgba(255, 255, 255, 0.8); margin-top: 0.5rem; padding-left: 1.5rem;">
+                    <li><strong>Property (Свойство):</strong> <code>m</code> (для margin) или <code>p</code> (для padding).</li>
+                    <li><strong>Sides (Стороны):</strong>
+                        <ul style="margin-top: 0.25rem;">
+                            <li><code>t</code> - (top) верх</li>
+                            <li><code>b</code> - (bottom) низ</li>
+                            <li><code>l</code> - (left) лево</li>
+                            <li><code>r</code> - (right) право</li>
+                            <li><code>x</code> - (горизонталь) left и right</li>
+                            <li><code>y</code> - (вертикаль) top и bottom</li>
+                            <li>(пусто) - все 4 стороны</li>
+                        </ul>
+                    </li>
+                    <li><strong>Size (Размер):</strong> Число из шкалы размеров (<code>0</code>, <code>1</code>, <code>2</code>, <code>4</code>...) или <code>auto</code>.</li>
+                </ul>
+                <p style="margin-top: 1rem; margin-bottom: 0;"><strong>Пример:</strong> <code>mt-4</code> устанавливает <code>margin-top: 1rem;</code>. <code>px-2</code> устанавливает <code>padding-left: 0.5rem;</code> и <code>padding-right: 0.5rem;</code>.</p>
+            </div>
+
+            <h3 class="subsection-title">Margin (Внешние отступы)</h3>
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <th>Класс</th>
+                        <th>Свойства CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>m-{size}</code></td>
+                        <td><code>margin: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>mt-{size}</code></td>
+                        <td><code>margin-top: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>mb-{size}</code></td>
+                        <td><code>margin-bottom: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>ml-{size}</code></td>
+                        <td><code>margin-left: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>mr-{size}</code></td>
+                        <td><code>margin-right: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>mx-{size}</code></td>
+                        <td><code>margin-left: {value}; margin-right: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>my-{size}</code></td>
+                        <td><code>margin-top: {value}; margin-bottom: {value};</code></td>
+                    </tr>
+                     <tr>
+                        <td><code>m-auto</code></td>
+                        <td><code>margin: auto;</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>mx-auto</code></td>
+                        <td><code>margin-left: auto; margin-right: auto;</code></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Padding (Внутренние поля)</h3>
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <th>Класс</th>
+                        <th>Свойства CSS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>p-{size}</code></td>
+                        <td><code>padding: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>pt-{size}</code></td>
+                        <td><code>padding-top: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>pb-{size}</code></td>
+                        <td><code>padding-bottom: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>pl-{size}</code></td>
+                        <td><code>padding-left: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>pr-{size}</code></td>
+                        <td><code>padding-right: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>px-{size}</code></td>
+                        <td><code>padding-left: {value}; padding-right: {value};</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>py-{size}</code></td>
+                        <td><code>padding-top: {value}; padding-bottom: {value};</code></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="subsection-title">Шкала размеров</h3>
+            <p class="section-description">Размеры основаны на переменной <code>--deca-space-X</code>, где 1 единица = 0.25rem (4px).</p>
+            <table class="docs-table">
+                <thead>
+                    <tr>
+                        <th>Размер</th>
+                        <th>Значение (CSS-переменная)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>0</code></td>
+                        <td><code>--deca-space-0</code> (0px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>1</code></td>
+                        <td><code>--deca-space-1</code> (0.25rem / 4px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>2</code></td>
+                        <td><code>--deca-space-2</code> (0.5rem / 8px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>3</code></td>
+                        <td><code>--deca-space-3</code> (0.75rem / 12px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>4</code></td>
+                        <td><code>--deca-space-4</code> (1rem / 16px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>5</code></td>
+                        <td><code>--deca-space-5</code> (1.25rem / 20px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>6</code></td>
+                        <td><code>--deca-space-6</code> (1.5rem / 24px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>8</code></td>
+                        <td><code>--deca-space-8</code> (2rem / 32px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>10</code></td>
+                        <td><code>--deca-space-10</code> (2.5rem / 40px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>12</code></td>
+                        <td><code>--deca-space-12</code> (3rem / 48px)</td>
+                    </tr>
+                    <tr>
+                        <td><code>16</code></td>
+                        <td><code>--deca-space-16</code> (4rem / 64px)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
         <!-- Buttons -->
         <section id="buttons" class="component-section">
             <div class="section-header">
