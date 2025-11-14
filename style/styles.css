@@ -1940,7 +1940,7 @@ p {
 .text-gray-900 { color: var(--deca-gray-900); }
 
 /* ========================================
-   BUTTONS
+   BUTTONS (УЛУЧШЕННЫЙ ФОКУС)
    ======================================== */
 
 .btn {
@@ -1962,11 +1962,10 @@ p {
     user-select: none;
 }
 
-.btn:focus {
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
-}
+/* * ИЗМЕНЕНИЕ: Мы убрали 'box-shadow' отсюда, 
+ * чтобы кнопки использовали собственный эффект фокуса.
+ */
+
 
 .btn:disabled {
     opacity: 0.6;
@@ -1981,7 +1980,10 @@ p {
     box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
 }
 
-.btn-primary:hover {
+/* * ИЗМЕНЕНИЕ: Добавлен :focus для соответствия :hover 
+ */
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: var(--deca-primary-hover);
     box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
     transform: translateY(-1px);
@@ -1998,7 +2000,8 @@ p {
     box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:focus {
     background-color: var(--deca-secondary-hover);
     box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
     transform: translateY(-1px);
@@ -2010,7 +2013,8 @@ p {
     box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);
 }
 
-.btn-success:hover {
+.btn-success:hover,
+.btn-success:focus {
     background-color: var(--deca-success-hover);
     transform: translateY(-1px);
 }
@@ -2021,7 +2025,8 @@ p {
     box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.39);
 }
 
-.btn-danger:hover {
+.btn-danger:hover,
+.btn-danger:focus {
     background-color: var(--deca-danger-hover);
     transform: translateY(-1px);
 }
@@ -2032,7 +2037,8 @@ p {
     box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);
 }
 
-.btn-warning:hover {
+.btn-warning:hover,
+.btn-warning:focus {
     background-color: var(--deca-warning-hover);
     transform: translateY(-1px);
 }
@@ -2043,7 +2049,8 @@ p {
     box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
 }
 
-.btn-info:hover {
+.btn-info:hover,
+.btn-info:focus {
     background-color: var(--deca-info-hover);
     transform: translateY(-1px);
 }
@@ -2054,7 +2061,8 @@ p {
     border-color: var(--deca-gray-300);
 }
 
-.btn-light:hover {
+.btn-light:hover,
+.btn-light:focus {
     background-color: var(--deca-gray-200);
     transform: translateY(-1px);
 }
@@ -2064,7 +2072,8 @@ p {
     color: var(--deca-white);
 }
 
-.btn-dark:hover {
+.btn-dark:hover,
+.btn-dark:focus {
     background-color: var(--deca-gray-800);
     transform: translateY(-1px);
 }
@@ -2076,7 +2085,8 @@ p {
     border-color: var(--deca-primary);
 }
 
-.btn-outline-primary:hover {
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
     background-color: var(--deca-primary);
     color: var(--deca-white);
     transform: translateY(-1px);
@@ -2088,7 +2098,8 @@ p {
     border-color: var(--deca-secondary);
 }
 
-.btn-outline-secondary:hover {
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
     background-color: var(--deca-secondary);
     color: var(--deca-white);
     transform: translateY(-1px);
@@ -2100,7 +2111,8 @@ p {
     border-color: var(--deca-success);
 }
 
-.btn-outline-success:hover {
+.btn-outline-success:hover,
+.btn-outline-success:focus {
     background-color: var(--deca-success);
     color: var(--deca-white);
 }
@@ -2111,7 +2123,8 @@ p {
     border-color: var(--deca-danger);
 }
 
-.btn-outline-danger:hover {
+.btn-outline-danger:hover,
+.btn-outline-danger:focus {
     background-color: var(--deca-danger);
     color: var(--deca-white);
 }
@@ -2123,7 +2136,8 @@ p {
     box-shadow: none;
 }
 
-.btn-ghost:hover {
+.btn-ghost:hover,
+.btn-ghost:focus {
     background-color: var(--deca-gray-100);
     transform: none;
 }
@@ -2136,7 +2150,8 @@ p {
     box-shadow: none;
 }
 
-.btn-link:hover {
+.btn-link:hover,
+.btn-link:focus {
     color: var(--deca-primary-hover);
     text-decoration: none;
     transform: none;
@@ -2221,6 +2236,55 @@ p {
 @keyframes button-loading-spinner {
     from { transform: rotate(0turn); }
     to { transform: rotate(1turn); }
+}
+
+/* ========================================
+   BUTTONS (ENHANCED STYLES)
+   ======================================== */
+
+/* НОВЫЙ: Pill Buttons (полностью скругленные) */
+.btn-pill {
+    border-radius: var(--deca-rounded-full);
+}
+
+/* НОВЫЙ: Icon Buttons (для кнопок только с иконкой) */
+.btn-icon {
+    /* Делаем кнопку квадратной */
+    width: var(--deca-space-10); /* 2.5rem */
+    height: var(--deca-space-10); /* 2.5rem */
+    padding: 0;
+    /* Идеальное центрирование иконки */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+/* Размеры для icon buttons */
+.btn-icon-sm {
+    width: var(--deca-space-8); /* 2rem */
+    height: var(--deca-space-8); /* 2rem */
+}
+.btn-icon-lg {
+    width: var(--deca-space-12); /* 3rem */
+    height: var(--deca-space-12); /* 3rem */
+}
+/* Круглая иконка */
+.btn-icon.btn-pill {
+    border-radius: var(--deca-rounded-full);
+}
+
+/* НОВЫЙ: Улучшенная поддержка иконок в кнопках */
+.btn > .icon {
+    /* Добавляем отступ, если иконка не единственный элемент */
+    margin-right: var(--deca-space-2); 
+}
+.btn > .icon:last-child {
+    margin-right: 0;
+    margin-left: var(--deca-space-2);
+}
+/* Если в кнопке только иконка, отступы не нужны */
+.btn > .icon:first-child:last-child {
+    margin: 0;
 }
 
 /* ========================================
@@ -3422,4 +3486,160 @@ textarea.form-control {
     .flex-xl-wrap { flex-wrap: wrap !important; }
     .flex-xl-nowrap { flex-wrap: nowrap !important; }
     .flex-xl-wrap-reverse { flex-wrap: wrap-reverse !important; }
+}
+
+/* ========================================
+   CONTAINERS (ENHANCED)
+   ======================================== */
+
+/* Базовые стили для всех контейнеров */
+.container,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl,
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: var(--deca-space-4); /* 1rem */
+    padding-left: var(--deca-space-4);  /* 1rem */
+    box-sizing: border-box; /* Гарантирует, что padding включен в ширину */
+}
+
+/* 1. .container (Стандартный адаптивный контейнер) */
+/* Его max-width меняется на каждом брейкпоинте */
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+@media (min-width: 1400px) { .container { max-width: 1320px; } }
+
+/* 2. .container-{breakpoint} (100% ширина ДО брейкпоинта) */
+@media (min-width: 576px) { .container-sm { max-width: 540px; } }
+@media (min-width: 768px) { .container-md { max-width: 720px; } }
+@media (min-width: 992px) { .container-lg { max-width: 960px; } }
+@media (min-width: 1200px) { .container-xl { max-width: 1140px; } }
+@media (min-width: 1400px) { .container-xxl { max-width: 1320px; } }
+
+/* 3. .container-fluid (Всегда 100% ширина) */
+/* Дополнительные правила не нужны, база уже все делает. */
+
+/* ========================================
+   ALERTS (ENHANCED STYLES)
+   ======================================== */
+
+/* НОВЫЙ: Заголовок для Alert */
+.alert-heading {
+    color: inherit; /* Наследует цвет от родительского .alert-* */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: var(--deca-space-3);
+}
+
+/* НОВЫЙ: Ссылки в Alert (авто-стилизация) */
+.alert-primary .alert-link { color: var(--deca-primary-dark); font-weight: 600; text-decoration: underline; }
+.alert-secondary .alert-link { color: var(--deca-secondary-dark); font-weight: 600; text-decoration: underline; }
+.alert-success .alert-link { color: var(--deca-success-dark); font-weight: 600; text-decoration: underline; }
+.alert-danger .alert-link { color: var(--deca-danger-dark); font-weight: 600; text-decoration: underline; }
+.alert-warning .alert-link { color: var(--deca-warning-dark); font-weight: 600; text-decoration: underline; }
+.alert-info .alert-link { color: var(--deca-info-dark); font-weight: 600; text-decoration: underline; }
+
+
+/* ========================================
+   BUTTONS (ENHANCED STYLES)
+   ======================================== */
+
+/* НОВЫЙ: Pill Buttons (полностью скругленные) */
+.btn-pill {
+    border-radius: var(--deca-rounded-full);
+}
+
+/* НОВЫЙ: Icon Buttons (для кнопок только с иконкой) */
+.btn-icon {
+    /* Делаем кнопку квадратной */
+    width: var(--deca-space-10); /* 2.5rem */
+    height: var(--deca-space-10); /* 2.5rem */
+    padding: 0;
+    /* Идеальное центрирование иконки */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+/* Размеры для icon buttons */
+.btn-icon-sm {
+    width: var(--deca-space-8); /* 2rem */
+    height: var(--deca-space-8); /* 2rem */
+}
+.btn-icon-lg {
+    width: var(--deca-space-12); /* 3rem */
+    height: var(--deca-space-12); /* 3rem */
+}
+/* Круглая иконка */
+.btn-icon.btn-pill {
+    border-radius: var(--deca-rounded-full);
+}
+
+/* НОВЫЙ: Улучшенная поддержка иконок в кнопках */
+.btn > .icon {
+    /* Добавляем отступ, если иконка не единственный элемент */
+    margin-right: var(--deca-space-2); 
+}
+.btn > .icon:last-child {
+    margin-right: 0;
+    margin-left: var(--deca-space-2);
+}
+/* Если в кнопке только иконка, отступы не нужны */
+.btn > .icon:first-child:last-child {
+    margin: 0;
+}
+
+/* ========================================
+   PROGRESS BARS (ENHANCED STYLES)
+   ======================================== */
+
+/* Улучшение для меток (Labels) */
+.progress-bar {
+    /* Добавляем overflow: hidden, чтобы текст не вылезал за скругленные углы */
+    overflow: hidden;
+    /* Улучшаем читаемость текста */
+    color: var(--deca-white);
+    font-weight: 600;
+    font-size: var(--deca-text-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* НОВЫЙ: Маленький Progress Bar */
+.progress-sm {
+    height: 0.5rem; /* 8px */
+}
+.progress-sm .progress-bar {
+    font-size: 0; /* Скрываем текст в маленьких барах */
+}
+
+/* НОВЫЙ: Большой Progress Bar */
+.progress-lg {
+    height: 1.5rem; /* 24px */
+}
+.progress-lg .progress-bar {
+    font-size: var(--deca-text-sm);
+}
+
+/* ========================================
+   SPINNERS (ENHANCED STYLES)
+   ======================================== */
+
+/* НОВЫЙ: Размеры для .spinner-grow */
+.spinner-grow-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+.spinner-grow-lg {
+    width: 3rem;
+    height: 3rem;
 }
