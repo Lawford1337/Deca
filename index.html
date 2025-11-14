@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Deca - Professional UI framework for modern web development. Build beautiful interfaces faster.">
     <title>Deca Framework - Professional UI Framework</title>
-    <link rel="stylesheet" href="./style/styles.css">
+    <link rel="stylesheet" href="./styles.css">
+    
     <style>
         body {
             overflow-x: hidden;
+            background-color: var(--deca-white); /* Используем фон из фреймворка */
+            color: var(--deca-gray-700);
         }
 
-        /* Navigation */
+        /* Navigation (Ваш оригинальный стиль) */
         nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
@@ -22,11 +25,9 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-
         nav.scrolled {
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
-
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -35,7 +36,6 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.75rem;
             font-weight: 900;
@@ -43,8 +43,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             letter-spacing: -0.5px;
+            text-decoration: none;
         }
-
         .nav-links {
             display: flex;
             list-style: none;
@@ -53,7 +53,6 @@
             padding: 0;
             align-items: center;
         }
-
         .nav-links a {
             text-decoration: none;
             color: var(--deca-gray-700);
@@ -61,11 +60,9 @@
             transition: all 0.3s;
             position: relative;
         }
-
         .nav-links a:hover {
             color: var(--deca-primary);
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -76,12 +73,11 @@
             background: var(--deca-primary);
             transition: width 0.3s;
         }
-
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section (Ваш оригинальный стиль) */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -91,7 +87,6 @@
             overflow: hidden;
             padding: 4rem 2rem;
         }
-
         .hero::before {
             content: '';
             position: absolute;
@@ -102,23 +97,17 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: float 20s infinite ease-in-out;
         }
-
         @keyframes float {
             0%, 100% { transform: translate(0, 0) rotate(0deg); }
             50% { transform: translate(-20px, 20px) rotate(5deg); }
         }
-
         .hero-content {
+            width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
             position: relative;
             z-index: 1;
         }
-
         .hero-text h1 {
             font-size: clamp(3rem, 6vw, 5rem);
             font-weight: 900;
@@ -127,52 +116,48 @@
             line-height: 1.1;
             letter-spacing: -2px;
         }
-
         .hero-text p {
             font-size: clamp(1.1rem, 2vw, 1.4rem);
             color: rgba(255, 255, 255, 0.95);
             margin-bottom: 2.5rem;
             line-height: 1.6;
         }
-
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
             flex-wrap: wrap;
         }
-
+        
+        /* ИСПРАВЛЕНИЕ: Используем РЕАЛЬНЫЕ кнопки из styles.css */
         .hero-buttons .btn {
             padding: 1rem 2.5rem;
             font-size: 1.1rem;
-            font-weight: 600;
             border-radius: 12px;
-            transition: all 0.3s;
         }
-
-        .btn-hero-primary {
-            background: white;
+        /* Кастомный стиль для белой кнопки */
+        .btn-hero-light {
+            background-color: white;
             color: var(--deca-primary);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
-
-        .btn-hero-primary:hover {
+        .btn-hero-light:hover {
+            background-color: var(--deca-gray-50);
             transform: translateY(-3px);
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
         }
-
-        .btn-hero-secondary {
+        /* Кастомный стиль для прозрачной кнопки */
+        .btn-hero-outline {
             background: rgba(255, 255, 255, 0.15);
             color: white;
             border: 2px solid white;
             backdrop-filter: blur(10px);
         }
-
-        .btn-hero-secondary:hover {
+        .btn-hero-outline:hover {
             background: rgba(255, 255, 255, 0.25);
             transform: translateY(-3px);
         }
 
-        /* Code Preview */
+        /* Code Preview (Ваш оригинальный стиль) */
         .code-preview {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 20px;
@@ -181,7 +166,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
-
         .code-preview pre {
             background: rgba(0, 0, 0, 0.4);
             padding: 1.5rem;
@@ -192,12 +176,11 @@
             margin: 0;
         }
 
-        /* Stats Bar */
+        /* Stats Bar (Фон изменен на светлый) */
         .stats-bar {
-            background: var(--deca-gray-900);
+            background: var(--deca-gray-100);
             padding: 4rem 2rem;
         }
-
         .stats-grid {
             max-width: 1400px;
             margin: 0 auto;
@@ -206,7 +189,6 @@
             gap: 3rem;
             text-align: center;
         }
-
         .stat-item h3 {
             font-size: 3.5rem;
             font-weight: 900;
@@ -215,25 +197,22 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
         }
-
         .stat-item p {
-            color: var(--deca-gray-400);
+            color: var(--deca-gray-600);
             font-size: 1.1rem;
             margin: 0;
         }
 
-        /* Features Section */
+        /* Features Section (Ваш оригинальный стиль) */
         .features-section {
             padding: 6rem 2rem;
             background: linear-gradient(to bottom, white, var(--deca-gray-50));
         }
-
         .section-header {
             text-align: center;
             max-width: 800px;
             margin: 0 auto 4rem;
         }
-
         .section-header h2 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 900;
@@ -242,34 +221,22 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 1rem;
         }
-
         .section-header p {
             font-size: 1.25rem;
             color: var(--deca-gray-600);
         }
-
         .features-grid {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
         }
-
         .feature-card {
+            /* Используем .card из фреймворка, но с кастомным padding/radius */
             background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid var(--deca-gray-100);
         }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            border-color: var(--deca-primary);
-        }
+        /* Hover-эффекты из .card уже применены! */
 
         .feature-icon {
             font-size: 3.5rem;
@@ -277,30 +244,26 @@
             display: inline-block;
             transition: transform 0.3s;
         }
-
         .feature-card:hover .feature-icon {
             transform: scale(1.1) rotate(5deg);
         }
-
         .feature-card h3 {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--deca-gray-900);
             margin-bottom: 1rem;
         }
-
         .feature-card p {
             color: var(--deca-gray-600);
             line-height: 1.7;
             margin: 0;
         }
 
-        /* Components Showcase */
+        /* Components Showcase (Ваш оригинальный стиль) */
         .components-section {
             padding: 6rem 2rem;
             background: white;
         }
-
         .component-demo {
             max-width: 1400px;
             margin: 0 auto;
@@ -310,54 +273,37 @@
             box-shadow: 0 10px 60px rgba(0, 0, 0, 0.1);
             border: 1px solid var(--deca-gray-200);
         }
-
+        /* ИСПРАВЛЕНИЕ: Используем .nav-pills из фреймворка */
         .demo-tabs {
-            display: flex;
-            gap: 1rem;
             margin-bottom: 2rem;
-            flex-wrap: wrap;
         }
-
         .demo-tab {
-            padding: 0.75rem 1.5rem;
-            background: var(--deca-gray-100);
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            color: var(--deca-gray-700);
-            cursor: pointer;
-            transition: all 0.3s;
+             /* .nav-pills .nav-link */
+             font-weight: 600;
+             cursor: pointer;
         }
-
-        .demo-tab.active {
-            background: var(--deca-primary);
-            color: white;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-        }
-
         .demo-content {
             padding: 2rem;
             background: var(--deca-gray-50);
             border-radius: 16px;
             min-height: 300px;
         }
-
         .demo-pane {
             display: none;
         }
-
         .demo-pane.active {
             display: block;
         }
+        /* Компоненты (forms, cards, alerts) теперь будут 
+           автоматически использовать светлую тему из styles.css */
 
-        /* CTA Section */
+        /* CTA Section (Ваш оригинальный стиль) */
         .cta-section {
             padding: 6rem 2rem;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
         }
-
         .cta-section::before {
             content: '';
             position: absolute;
@@ -368,7 +314,6 @@
             background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
             opacity: 0.3;
         }
-
         .cta-content {
             max-width: 900px;
             margin: 0 auto;
@@ -376,63 +321,51 @@
             position: relative;
             z-index: 1;
         }
-
         .cta-content h2 {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 900;
             color: white;
             margin-bottom: 1.5rem;
         }
-
         .cta-content p {
             font-size: 1.4rem;
             color: rgba(255, 255, 255, 0.95);
             margin-bottom: 2.5rem;
         }
 
-        /* Footer */
+        /* Footer (Ваш оригинальный стиль) */
         footer {
             background: var(--deca-gray-900);
             color: white;
             padding: 4rem 2rem 2rem;
         }
-
         .footer-grid {
             max-width: 1400px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1fr;
-            gap: 3rem;
             margin-bottom: 3rem;
         }
-
         .footer-section h4 {
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: white;
         }
-
         .footer-section ul {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-
         .footer-section li {
             margin-bottom: 0.75rem;
         }
-
         .footer-section a {
             color: var(--deca-gray-400);
             text-decoration: none;
             transition: color 0.3s;
         }
-
         .footer-section a:hover {
             color: white;
         }
-
         .footer-bottom {
             max-width: 1400px;
             margin: 0 auto;
@@ -445,41 +378,15 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-content {
-                grid-template-columns: 1fr;
                 text-align: center;
             }
-
-            .code-preview {
-                max-width: 600px;
-                margin: 0 auto;
-            }
-
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
             .hero-buttons {
                 justify-content: center;
             }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
             }
         }
 
@@ -494,45 +401,46 @@
                 transform: translateY(0);
             }
         }
-
         .animate-in {
             animation: fadeInUp 0.6s ease-out forwards;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">Deca</div>
+            <a href="#home" class="logo">Deca</a>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#components">Components</a></li>
                 <li><a href="components-reference.html">Docs</a></li>
-                <li><a href="example-landing.html">Examples</a></li>
+                <li><a href="example-landing.html">Examples</a>
                 <li><a href="https://github.com/lawford1337/deca" class="btn btn-primary btn-sm">GitHub</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Build Beautiful Interfaces in Minutes</h1>
-                <p>Deca is a professional, lightweight UI framework for modern web development. Create stunning, responsive interfaces with minimal code and maximum flexibility.</p>
-                <div class="hero-buttons">
-                    <button class="btn btn-hero-primary" onclick="window.location.href='components-reference.html'">
-                        Get Started →
-                    </button>
-                    <button class="btn btn-hero-secondary" onclick="window.location.href='example-landing.html'">
-                        View Examples
-                    </button>
+        <div class="hero-content container">
+            <div class="row align-items-center g-6">
+                <div class="col-lg-7">
+                    <div class="hero-text">
+                        <h1>Build Beautiful Interfaces in Minutes</h1>
+                        <p>Deca is a professional, lightweight UI framework for modern web development. Create stunning, responsive interfaces with minimal code and maximum flexibility.</p>
+                        <div class="hero-buttons">
+                            <a class="btn btn-hero-light" href="components-reference.html">
+                                Get Started →
+                            </a>
+                            <a class="btn btn-hero-outline" href="example-landing.html">
+                                View Examples
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="code-preview">
-                <pre><code><span style="color: #8b5cf6;">&lt;link</span> <span style="color: #10b981;">rel</span>=<span style="color: #f59e0b;">"stylesheet"</span> 
+                <div class="col-lg-5">
+                     <div class="code-preview">
+                        <pre><code><span style="color: #8b5cf6;">&lt;link</span> <span style="color: #10b981;">rel</span>=<span style="color: #f59e0b;">"stylesheet"</span> 
       <span style="color: #10b981;">href</span>=<span style="color: #f59e0b;">"deca.min.css"</span><span style="color: #8b5cf6;">&gt;</span>
 
 <span style="color: #8b5cf6;">&lt;div</span> <span style="color: #10b981;">class</span>=<span style="color: #f59e0b;">"card"</span><span style="color: #8b5cf6;">&gt;</span>
@@ -544,11 +452,12 @@
     <span style="color: #8b5cf6;">&lt;/button&gt;</span>
   <span style="color: #8b5cf6;">&lt;/div&gt;</span>
 <span style="color: #8b5cf6;">&lt;/div&gt;</span></code></pre>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Bar -->
     <section class="stats-bar">
         <div class="stats-grid">
             <div class="stat-item">
@@ -570,233 +479,252 @@
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features-section" id="features">
-        <div class="section-header">
-            <h2>Why Choose Deca?</h2>
-            <p>Built with modern web standards and best practices in mind</p>
-        </div>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚀</div>
-                <h3>Lightning Fast</h3>
-                <p>Optimized for performance with minimal bundle size. Load times that your users will love. No bloat, just pure speed.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Deca?</h2>
+                <p>Built with modern web standards and best practices in mind</p>
             </div>
+            
+            <div class="features-grid row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card card h-100">
+                        <div class="feature-icon">🚀</div>
+                        <h3>Lightning Fast</h3>
+                        <p>Optimized for performance with minimal bundle size. Load times that your users will love. No bloat, just pure speed.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">📱</div>
-                <h3>Mobile First</h3>
-                <p>Fully responsive design that looks perfect on any device. From smartphones to 4K displays, your content adapts beautifully.</p>
-            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card card h-100">
+                        <div class="feature-icon">📱</div>
+                        <h3>Mobile First</h3>
+                        <p>Fully responsive design that looks perfect on any device. From smartphones to 4K displays, your content adapts beautifully.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>Highly Customizable</h3>
-                <p>Easy-to-use CSS variables and modular components let you create your unique brand identity with minimal effort.</p>
-            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card card h-100">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Highly Customizable</h3>
+                        <p>Easy-to-use CSS variables and modular components let you create your unique brand identity with minimal effort.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">♿</div>
-                <h3>Accessible</h3>
-                <p>Built with WCAG 2.1 guidelines in mind. Semantic HTML, ARIA labels, and keyboard navigation included by default.</p>
-            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card card h-100">
+                        <div class="feature-icon">♿</div>
+                        <h3>Accessible</h3>
+                        <p>Built with WCAG 2.1 guidelines in mind. Semantic HTML, ARIA labels, and keyboard navigation included by default.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">🔧</div>
-                <h3>No Dependencies</h3>
-                <p>Pure CSS and vanilla JavaScript. No jQuery, no React, no build tools required. Just include and start building.</p>
-            </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card card h-100">
+                        <div class="feature-icon">🔧</div>
+                        <h3>No Dependencies</h3>
+                        <p>Pure CSS and vanilla JavaScript. No jQuery, no React, no build tools required. Just include and start building.</p>
+                    </div>
+                </div>
 
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Well Documented</h3>
-                <p>Comprehensive documentation with live examples, code snippets, and best practices to get you started quickly.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card card h-100">
+                        <div class="feature-icon">📚</div>
+                        <h3>Well Documented</h3>
+                        <p>Comprehensive documentation with live examples, code snippets, and best practices to get you started quickly.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Components Showcase -->
     <section class="components-section" id="components">
-        <div class="section-header">
-            <h2>Beautiful Components</h2>
-            <p>Over 50 pre-built components ready to use</p>
-        </div>
-
-        <div class="component-demo">
-            <div class="demo-tabs">
-                <button class="demo-tab active" data-tab="buttons">Buttons</button>
-                <button class="demo-tab" data-tab="forms">Forms</button>
-                <button class="demo-tab" data-tab="cards">Cards</button>
-                <button class="demo-tab" data-tab="alerts">Alerts</button>
+        <div class="container">
+            <div class="section-header">
+                <h2>Beautiful Components</h2>
+                <p>Over 50 pre-built components ready to use</p>
             </div>
 
-            <div class="demo-content">
-                <!-- Buttons Tab -->
-                <div class="demo-pane active" id="buttons">
-                    <h3 class="mb-4">Button Variants</h3>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                        <button class="btn btn-primary">Primary</button>
-                        <button class="btn btn-secondary">Secondary</button>
-                        <button class="btn btn-success">Success</button>
-                        <button class="btn btn-danger">Danger</button>
-                        <button class="btn btn-warning">Warning</button>
-                        <button class="btn btn-info">Info</button>
+            <div class="component-demo">
+                <ul class="nav nav-pills demo-tabs" role="tablist">
+                    <li class="nav-item">
+                        <button class="nav-link demo-tab active" data-tab="buttons" role="tab">Buttons</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link demo-tab" data-tab="forms" role="tab">Forms</button>
+                    </li>
+                     <li class="nav-item">
+                        <button class="nav-link demo-tab" data-tab="cards" role="tab">Cards</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link demo-tab" data-tab="alerts" role="tab">Alerts</button>
+                    </li>
+                </ul>
+
+                <div class="demo-content tab-content">
+                    <div class="demo-pane tab-pane active" id="buttons">
+                        <h3 class="mb-4">Button Variants</h3>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                            <button class="btn btn-primary">Primary</button>
+                            <button class="btn btn-secondary">Secondary</button>
+                            <button class="btn btn-success">Success</button>
+                            <button class="btn btn-danger">Danger</button>
+                            <button class="btn btn-warning">Warning</button>
+                            <button class="btn btn-info">Info</button>
+                        </div>
+
+                        <h3 class="mb-4">Outline Buttons</h3>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                            <button class="btn btn-outline-primary">Primary</button>
+                            <button class="btn btn-outline-secondary">Secondary</button>
+                            <button class="btn btn-outline-success">Success</button>
+                        </div>
+
+                        <h3 class="mb-4">Button Sizes</h3>
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                            <button class="btn btn-primary btn-sm">Small</button>
+                            <button class="btn btn-primary">Medium</button>
+                            <button class="btn btn-primary btn-lg">Large</button>
+                        </div>
                     </div>
 
-                    <h3 class="mb-4">Outline Buttons</h3>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                        <button class="btn btn-outline-primary">Primary</button>
-                        <button class="btn btn-outline-secondary">Secondary</button>
-                        <button class="btn btn-outline-success">Success</button>
-                    </div>
-
-                    <h3 class="mb-4">Button Sizes</h3>
-                    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-                        <button class="btn btn-primary btn-sm">Small</button>
-                        <button class="btn btn-primary">Medium</button>
-                        <button class="btn btn-primary btn-lg">Large</button>
-                    </div>
-                </div>
-
-                <!-- Forms Tab -->
-                <div class="demo-pane" id="forms">
-                    <h3 class="mb-4">Form Elements</h3>
-                    <div style="max-width: 600px;">
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-control" placeholder="you@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="Enter password">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Select Option</label>
-                            <select class="form-select">
-                                <option>Choose one...</option>
-                                <option>Option 1</option>
-                                <option>Option 2</option>
-                                <option>Option 3</option>
-                            </select>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check1">
-                            <label class="form-check-label" for="check1">Remember me</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="check2">
-                            <label class="form-check-label" for="check2">I agree to terms</label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cards Tab -->
-                <div class="demo-pane" id="cards">
-                    <h3 class="mb-4">Card Components</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="badge badge-primary mb-3">New</span>
-                                <h4>Card Title</h4>
-                                <p>Beautiful card component with shadow and hover effects.</p>
-                                <button class="btn btn-primary btn-sm">Learn More</button>
+                    <div class="demo-pane tab-pane" id="forms">
+                        <h3 class="mb-4">Form Elements</h3>
+                        <div style="max-width: 600px;">
+                            <div class="form-group">
+                                <label class="form-label" for="demo-email">Email Address</label>
+                                <input type="email" class="form-control" id="demo-email" placeholder="you@example.com">
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="badge badge-success mb-3">Popular</span>
-                                <h4>Featured Card</h4>
-                                <p>Flexible content containers with multiple variants.</p>
-                                <button class="btn btn-secondary btn-sm">View Details</button>
+                            <div class="form-group">
+                                <label class="form-label" for="demo-select">Select Option</label>
+                                <select class="form-select" id="demo-select">
+                                    <option>Choose one...</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
                             </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-content">
-                                <span class="badge badge-info mb-3">Updated</span>
-                                <h4>Info Card</h4>
-                                <p>Easy to customize and style for your needs.</p>
-                                <button class="btn btn-info btn-sm">Explore</button>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="check1">
+                                <label class="form-check-label" for="check1">Remember me</label>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Alerts Tab -->
-                <div class="demo-pane" id="alerts">
-                    <h3 class="mb-4">Alert Messages</h3>
-                    <div class="alert alert-success mb-3">
-                        <strong>Success!</strong> Your action completed successfully.
+                    <div class="demo-pane tab-pane" id="cards">
+                        <h3 class="mb-4">Card Components</h3>
+                        <div class="row g-4">
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-content">
+                                        <span class="badge badge-primary mb-3">New</span>
+                                        <h4>Card Title</h4>
+                                        <p>Beautiful card component with shadow and hover effects.</p>
+                                        <button class="btn btn-primary btn-sm">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-content">
+                                        <span class="badge badge-success mb-3">Popular</span>
+                                        <h4>Featured Card</h4>
+                                        <p>Flexible content containers with multiple variants.</p>
+                                        <button class="btn btn-secondary btn-sm">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card h-100">
+                                    <div class="card-content">
+                                        <span class="badge badge-info mb-3">Updated</span>
+                                        <h4>Info Card</h4>
+                                        <p>Easy to customize and style for your needs.</p>
+                                        <button class="btn btn-info btn-sm">Explore</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="alert alert-info mb-3">
-                        <strong>Info:</strong> Here's some helpful information for you.
-                    </div>
-                    <div class="alert alert-warning mb-3">
-                        <strong>Warning!</strong> Please check this important notice.
-                    </div>
-                    <div class="alert alert-danger mb-3">
-                        <strong>Error!</strong> Something went wrong. Please try again.
-                    </div>
-                    <div class="alert alert-primary">
-                        <strong>Primary Alert:</strong> This is a primary alert message.
+
+                    <div class="demo-pane tab-pane" id="alerts">
+                        <h3 class="mb-4">Alert Messages</h3>
+                        <div class="alert alert-success mb-3">
+                            <strong>Success!</strong> Your action completed successfully.
+                        </div>
+                        <div class="alert alert-info mb-3">
+                            <strong>Info:</strong> Here's some helpful information for you.
+                        </div>
+                        <div class="alert alert-warning mb-3">
+                            <strong>Warning!</strong> Please check this important notice.
+                        </div>
+                        <div class="alert alert-danger">
+                            <strong>Error!</strong> Something went wrong. Please try again.
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="cta-content">
             <h2>Ready to Get Started?</h2>
             <p>Join thousands of developers building amazing interfaces with Deca</p>
             <div class="hero-buttons" style="justify-content: center;">
-                <button class="btn btn-hero-primary" onclick="window.location.href='components-reference.html'">
+                <a class="btn btn-hero-light" href="components-reference.html">
                     Read Documentation
-                </button>
-                <button class="btn btn-hero-secondary" onclick="window.location.href='example-landing.html'">
+                </a>
+                <a class="btn btn-hero-outline" href="example-landing.html">
                     View Examples
-                </button>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h4>Deca Framework</h4>
-                <p style="color: var(--deca-gray-400); line-height: 1.7;">A professional UI framework for modern web development. Build faster, ship better.</p>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Documentation</h4>
-                <ul>
-                    <li><a href="components-reference.html">Getting Started</a></li>
-                    <li><a href="components-reference.html#grid-system">Grid System</a></li>
-                    <li><a href="components-reference.html#buttons">Components</a></li>
-                    <li><a href="components-reference.html#colors">Utilities</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="https://github.com/deca-framework">GitHub</a></li>
-                    <li><a href="example-landing.html">Examples</a></li>
-                    <li><a href="#">Changelog</a></li>
-                    <li><a href="#">Roadmap</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-section">
-                <h4>Community</h4>
-                <ul>
-                    <li><a href="#">Discord</a></li>
-                    <li><a href="https://discord.com">Twitter</a></li>
-                    <li><a href="#">Stack Overflow</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
+        <div class="footer-grid container">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-12">
+                     <div class="footer-section">
+                        <a href="#home" class="logo" style="font-size: 1.2rem; text-decoration: none;">Deca</a>
+                        <p style="color: var(--deca-gray-400); line-height: 1.7; margin-top: 1rem;">A professional UI framework for modern web development. Build faster, ship better.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="footer-section">
+                        <h4>Documentation</h4>
+                        <ul>
+                            <li><a href="components-reference.html">Getting Started</a></li>
+                            <li><a href="components-reference.html#grid">Grid System</a></li>
+                            <li><a href="components-reference.html#buttons">Components</a></li>
+                            <li><a href="components-reference.html#colors">Utilities</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 col-6">
+                     <div class="footer-section">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="https://github.com/lawford1337/deca">GitHub</a></li>
+                            <li><a href="example-landing.html">Examples</a></li>
+                            <li><a href="#">Changelog</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                     <div class="footer-section">
+                        <h4>Community</h4>
+                        <ul>
+                            <li><a href="#">Discord</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -838,6 +766,8 @@
         });
 
         // Demo tabs switching
+        // ИСПРАВЛЕНИЕ: Этот код теперь использует классы .nav-link и .tab-pane из фреймворка,
+        // но считывает data-tab для связи.
         const demoTabs = document.querySelectorAll('.demo-tab');
         const demoPanes = document.querySelectorAll('.demo-pane');
         
@@ -861,7 +791,6 @@
 
         console.log('🚀 Deca Framework loaded successfully!');
         console.log('📚 Version: 1.0.0');
-        console.log('🌟 Visit https://github.com/deca-framework');
     </script>
 </body>
 </html>

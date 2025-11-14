@@ -245,6 +245,14 @@
     // DROPDOWN COMPONENT
     // ========================================
 
+   /* ========================================
+   DROPDOWN COMPONENT (УЛУЧШЕННЫЙ)
+   ======================================== */
+
+   /* ========================================
+   DROPDOWN COMPONENT (v2 - PROFESSIONAL)
+   ======================================== */
+
     class Dropdown {
         constructor(element, options = {}) {
             this.dropdown = Util.getElement(element);
@@ -255,6 +263,8 @@
                 closeOnClick: true,
                 ...options
             };
+            this.focusableItems = [];
+            this.activeIndex = -1;
 
             this.init();
         }
@@ -262,36 +272,118 @@
         init() {
             if (!this.toggle || !this.menu) return;
 
+            // Устанавливаем ARIA-атрибуты
+            this.toggle.setAttribute('aria-haspopup', 'true');
+            this.toggle.setAttribute('aria-expanded', 'false');
+            this.menu.setAttribute('role', 'menu');
+
+            // Клик по кнопке
             Util.on(this.toggle, 'click', (e) => {
                 e.preventDefault();
                 e.stopPropagation();
                 this.toggle();
             });
 
+            // Навигация с клавиатуры (Кнопка)
+            Util.on(this.toggle, 'keydown', (e) => this.handleToggleKeydown(e));
+            
+            // Навигация с клавиатуры (Меню)
+            Util.on(this.menu, 'keydown', (e) => this.handleMenuKeydown(e));
+
+            // Закрытие при клике снаружи
             Util.on(document, 'click', (e) => {
                 if (!this.dropdown.contains(e.target) && this.isOpen) {
                     this.close();
                 }
             });
 
+            // Закрытие при клике на элемент
             if (this.options.closeOnClick) {
-                const items = this.menu.querySelectorAll('.dropdown-item');
-                items.forEach(item => {
-                    Util.on(item, 'click', () => {
-                        if (!Util.hasClass(item, 'disabled')) {
-                            this.close();
-                        }
-                    });
+                Util.on(this.menu, 'click', '.dropdown-item', (e) => {
+                    const target = e.target.closest('.dropdown-item');
+                    if (!target || Util.hasClass(target, 'disabled') || target.disabled) {
+                        return; // Игнорируем клик, если это не кликабельный item
+                    }
+                    this.close();
                 });
             }
+        }
+        
+        // --- Методы для клавиатурной навигации ---
 
-            Util.on(document, 'keydown', (e) => {
-                if (e.key === 'Escape' && this.isOpen) {
+        updateFocusableItems() {
+            // Находим все элементы, на которых можно сфокусироваться
+            this.focusableItems = Util.getElements('.dropdown-item:not(.disabled):not([disabled])', this.menu);
+            this.activeIndex = -1; // Сбрасываем индекс
+        }
+
+        focusItem(index) {
+            // Циклический переход
+            if (index < 0) index = this.focusableItems.length - 1;
+            if (index >= this.focusableItems.length) index = 0;
+            
+            this.activeIndex = index;
+            // Убедимся, что у элемента есть .focus()
+            if (this.focusableItems[index] && typeof this.focusableItems[index].focus === 'function') {
+                this.focusableItems[index].focus();
+            }
+        }
+
+        handleToggleKeydown(e) {
+            // (Кнопка)
+            switch (e.key) {
+                case 'ArrowDown':
+                case 'ArrowUp':
+                    e.preventDefault();
+                    if (!this.isOpen) {
+                        this.open();
+                    }
+                    this.focusItem(e.key === 'ArrowDown' ? 0 : this.focusableItems.length - 1);
+                    break;
+                case 'Escape':
+                    if (this.isOpen) {
+                        this.close();
+                        this.toggle.focus();
+                    }
+                    break;
+            }
+        }
+
+        handleMenuKeydown(e) {
+            // (Меню)
+            switch (e.key) {
+                case 'ArrowDown':
+                    e.preventDefault();
+                    this.focusItem(this.activeIndex + 1);
+                    break;
+                case 'ArrowUp':
+                    e.preventDefault();
+                    this.focusItem(this.activeIndex - 1);
+                    break;
+                case 'Home':
+                case 'PageUp':
+                    e.preventDefault();
+                    this.focusItem(0);
+                    break;
+                case 'End':
+                case 'PageDown':
+                    e.preventDefault();
+                    this.focusItem(this.focusableItems.length - 1);
+                    break;
+                case 'Escape':
+                    e.preventDefault();
                     this.close();
                     this.toggle.focus();
-                }
-            });
+                    break;
+                case 'Tab':
+                    e.preventDefault();
+                    this.close(); // Закрываем при уходе Tab'ом
+                    this.toggle.focus(); // Возвращаем фокус на кнопку
+                    break;
+            }
         }
+        
+        // --- Основные методы ---
 
         toggle() {
             this.isOpen ? this.close() : this.open();
@@ -300,14 +392,21 @@
         open() {
             if (this.isOpen) return;
             
-            // Close other dropdowns
+            // Закрываем другие открытые меню
             document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-                Util.removeClass(menu, 'show');
+                if (menu !== this.menu) {
+                    Util.removeClass(menu, 'show');
+                    const otherToggle = menu.previousElementSibling;
+                    if(otherToggle && Util.getData(otherToggle, 'toggle') === 'dropdown') {
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
             });
 
             Util.addClass(this.menu, 'show');
             this.isOpen = true;
-            this.position();
+            this.toggle.setAttribute('aria-expanded', 'true');
+            this.updateFocusableItems(); // Обновляем список при открытии
             Util.trigger(this.dropdown, 'dropdown.show');
         }
 
@@ -316,28 +415,15 @@
             
             Util.removeClass(this.menu, 'show');
             this.isOpen = false;
+            this.toggle.setAttribute('aria-expanded', 'false');
             Util.trigger(this.dropdown, 'dropdown.hide');
-        }
-
-        position() {
-            const toggleRect = this.toggle.getBoundingClientRect();
-            const menuRect = this.menu.getBoundingClientRect();
-            const spaceBelow = window.innerHeight - toggleRect.bottom;
-            const spaceAbove = toggleRect.top;
-
-            if (spaceBelow < menuRect.height && spaceAbove > menuRect.height) {
-                this.menu.style.top = 'auto';
-                this.menu.style.bottom = '100%';
-            } else {
-                this.menu.style.top = '100%';
-                this.menu.style.bottom = 'auto';
-            }
         }
 
         static init() {
             const dropdowns = Util.getElements('[data-toggle="dropdown"]');
             dropdowns.forEach(toggle => {
-                const dropdown = toggle.closest('.dropdown');
+                // Ищем родителя с .dropdown или .dropup
+                const dropdown = toggle.closest('.dropdown, .dropup'); 
                 if (dropdown && !Util.getData(dropdown, 'dropdown')) {
                     new Dropdown(dropdown);
                     Util.setData(dropdown, 'dropdown', 'true');
@@ -350,17 +436,29 @@
     // MODAL COMPONENT
     // ========================================
 
+    /* ========================================
+   ЗАМЕНИТЕ ЭТОТ КОНСТРУКТОР В `index.js`
+   ======================================== */
+
     class Modal {
         constructor(element, options = {}) {
             this.modal = Util.getElement(element);
             this.backdrop = null;
             this.isOpen = false;
+
+            // --- НОВЫЙ БЛОК: Считываем опции из data-атрибутов ---
+            const dataBackdrop = Util.getData(this.modal, 'backdrop');
+            const dataKeyboard = Util.getData(this.modal, 'keyboard');
+            
             this.options = {
-                backdrop: true,
-                keyboard: true,
+                // По умолчанию 'true'. Считывает 'static' или 'false' из data-backdrop.
+                backdrop: dataBackdrop === 'static' ? 'static' : (dataBackdrop !== 'false'), 
+                // По умолчанию 'true'. Считывает 'false' из data-keyboard.
+                keyboard: dataKeyboard !== 'false', 
                 focus: true,
-                ...options
+                ...options // Переданные JS-опции переопределяют data-атрибуты
             };
+            // --- КОНЕЦ НОВОГО БЛОКА ---
 
             this.init();
         }
