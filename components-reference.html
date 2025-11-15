@@ -641,7 +641,7 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="#installation">Documentation</a></li>
             <li><a href="example-landing.html">Examples</a></li>
-           <li><a href="https://github.com/deca-framework" class="btn btn-primary btn-sm">GitHub</a></li>
+           <li><a href="https://github.com/lawford1337/Deca" class="btn btn-primary btn-sm">GitHub</a></li>
 
             <li>
                 <button id="theme-switcher" class="btn btn-outline-primary btn-sm" style="padding: 0.5rem; line-height: 1;">
@@ -658,6 +658,7 @@
             <ul>
                 <li><a href="#installation">Installation</a></li>
                 <li><a href="#customization">Customization</a></li>
+                <li><a href="#dark-mode">Dark Mode</a></li>
             </ul>
         </div>
         
@@ -883,6 +884,87 @@
                     </tr>
                 </tbody>
             </table>
+        </section>
+
+        <section id="dark-mode" class="component-section">
+            <div class="section-header">
+                <span class="section-icon">🌙</span>
+                <h2 class="section-title">Dark Mode</h2>
+            </div>
+            <p class="section-description">Deca Framework включает встроенную поддержку темной темы. Она работает путем переопределения CSS-переменных, когда к тегу <code>&lt;html&gt;</code> добавляется атрибут <code>data-theme="dark"</code>.</p>
+            
+            <h3 class="subsection-title">1. Как это работает</h3>
+            <p>Все стили темной темы уже включены в ваш <code>styles.css</code> в селекторе <code>html[data-theme="dark"] { ... }</code>. Вам не нужно подключать дополнительные CSS-файлы. Все, что требуется — это добавить/удалить атрибут <code>data-theme="dark"</code> у тега <code>&lt;html&gt;</code>.</p>
+
+            <h3 class="subsection-title">2. Пример переключателя (HTML)</h3>
+            <p>Вам нужен элемент (например, кнопка), который будет переключать тему. Эта страница (документация) использует кнопку в навигационной панели.</p>
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-language">HTML (Пример кнопки)</span>
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code><span class="code-comment">&lt;!-- Добавьте эту кнопку в ваш HTML --&gt;</span>
+<span class="code-keyword">&lt;button</span> <span class="code-function">id</span>=<span class="code-string">"theme-switcher"</span> <span class="code-function">class</span>=<span class="code-string">"btn btn-icon btn-icon-sm btn-outline-secondary"</span><span class="code-keyword">&gt;</span>
+  🌙
+<span class="code-keyword">&lt;/button&gt;</span></code></pre>
+            </div>
+
+            <h3 class="subsection-title">3. JavaScript (Для активации)</h3>
+            <p>Этот JavaScript-сниппет находит вашу кнопку, считывает сохраненную тему из <code>localStorage</code> (чтобы "запомнить" выбор пользователя) и добавляет/удаляет атрибут <code>data-theme="dark"</code>.</p>
+            
+            <div class="info-box">
+                <div class="info-box-title">💡 Важно</div>
+                <p>Этот скрипт — **пример**. Для работы он должен быть вставлен перед закрывающим тегом <code>&lt;/body&gt;</code>.</p>
+            </div>
+
+            <div class="code-block">
+                <div class="code-header">
+                    <span class="code-language">JavaScript (Логика переключателя)</span>
+                    <button class="copy-button" onclick="copyCode(this)">Copy</button>
+                </div>
+                <pre><code><span class="code-keyword">&lt;script&gt;</span>
+<span class="code-function">(function()</span> {
+    <span class="code-comment">// 1. Находим кнопку</span>
+    <span class="code-keyword">const</span> switcher = document.<span class="code-function">getElementById</span>(<span class="code-string">'theme-switcher'</span>);
+    <span class="code-keyword">if</span> (!switcher) <span class="code-keyword">return</span>;
+
+    <span class="code-comment">// 2. Находим <html></span>
+    <span class="code-keyword">const</span> html = document.documentElement;
+    <span class="code-keyword">const</span> lightIcon = <span class="code-string">'☀️'</span>;
+    <span class="code-keyword">const</span> darkIcon = <span class="code-string">'🌙'</span>;
+
+    <span class="code-comment">// 3. Функция для применения темы</span>
+    <span class="code-function">function</span> <span class="code-function">setTheme</span>(<span class="code-function">theme</span>) {
+        <span class="code-keyword">if</span> (theme === <span class="code-string">'dark'</span>) {
+            html.<span class="code-function">setAttribute</span>(<span class="code-string">'data-theme'</span>, <span class="code-string">'dark'</span>);
+            switcher.textContent = lightIcon;
+        } <span class="code-keyword">else</span> {
+            html.<span class="code-function">removeAttribute</span>(<span class="code-string">'data-theme'</span>);
+            switcher.textContent = darkIcon;
+        }
+        <span class="code-comment">// 4. Сохраняем выбор пользователя</span>
+        localStorage.<span class="code-function">setItem</span>(<span class="code-string">'my-theme'</span>, theme);
+    }
+
+    <span class="code-comment">// 5. Проверяем, что было сохранено</span>
+    <span class="code-keyword">let</span> currentTheme = localStorage.<span class="code-function">getItem</span>(<span class="code-string">'my-theme'</span>);
+    
+    <span class="code-comment">// 6. Если ничего не сохранено, проверяем системные настройки</span>
+    <span class="code-keyword">if</span> (!currentTheme) {
+        currentTheme = window.<span class="code-function">matchMedia</span>(<span class="code-string">'(prefers-color-scheme: dark)'</span>).matches ? <span class="code-string">'dark'</span> : <span class="code-string">'light'</span>;
+    }
+    
+    <span class="code-comment">// 7. Применяем тему при загрузке</span>
+    <span class="code-function">setTheme</span>(currentTheme);
+
+    <span class="code-comment">// 8. Вешаем слушатель на кнопку</span>
+    switcher.<span class="code-function">addEventListener</span>(<span class="code-string">'click'</span>, () =&gt; {
+        <span class="code-keyword">const</span> newTheme = html.<span class="code-function">hasAttribute</span>(<span class="code-string">'data-theme'</span>) ? <span class="code-string">'light'</span> : <span class="code-string">'dark'</span>;
+        <span class="code-function">setTheme</span>(newTheme);
+    });
+})();
+<span class="code-keyword">&lt;/script&gt;</span></code></pre>
+            </div>
         </section>
 
         <section id="containers" class="component-section">
@@ -3222,7 +3304,7 @@
     </script>
     <script src="./index.js"></script>
     <script>
-       
+        
     </script>
 
     <script>
