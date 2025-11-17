@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/styles.css">
+</head>
+<body>
+    <div class="container">
+    <div class="row g-4">
+        <div class="col-12 col-lg-4 col-md-6">
+            <div class="grid-demo-col" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-12 .col-md-6 .col-lg-4</div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-6">
+            <div class="grid-demo-col" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-12 .col-md-6 .col-lg-4</div>
+        </div>
+        <div class="col-12 col-lg-4 col-md-12">
+            <div class="grid-demo-col" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-12 .col-md-12 .col-lg-4</div>
+        </div>
+    </div>
+</div>
+
+<hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+<div class="container">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="grid-demo-col" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-md-4</div>
+        </div>
+        <div class="col-md-4 offset-md-4">
+            <div class="grid-demo-col grid-demo-col-offset" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-md-4 .offset-md-4</div>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-3 offset-md-3">
+            <div class="grid-demo-col grid-demo-col-offset" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-md-3 .offset-md-3</div>
+        </div>
+        <div class="col-md-3 offset-md-3">
+            <div class="grid-demo-col grid-demo-col-offset" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">.col-md-3 .offset-md-3</div>
+        </div>
+    </div>
+</div>
+
+<hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+<div class="container">
+    <div class="row g-4">
+        <div class="col-12 col-md-4">
+            <div class="grid-demo-col" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">Колонка 1 (в коде)</div>
+        </div>
+        <div class="col-12 col-md-4 order-md-first">
+            <div class="grid-demo-col grid-demo-col-order" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">Колонка 2 (в коде, но .order-md-first)</div>
+        </div>
+        <div class="col-12 col-md-4">
+            <div class="grid-demo-col" style="background: #1f2937; border-color: #4b5563; color: #e5e7eb;">Колонка 3 (в коде)</div>
+        </div>
+    </div>
+</div>
+
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="btn btn-primary">Primary</button>
+    <button class="btn btn-secondary">Secondary</button>
+    <button class="btn btn-success">Success</button>
+    <button class="btn btn-danger">Danger</button>
+    <button class="btn btn-warning">Warning</button>
+    <button class="btn btn-info">Info</button>
+    <button class="btn btn-light">Light</button>
+    <button class="btn btn-dark">Dark</button>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="btn btn-outline-primary">Primary</button>
+    <button class="btn btn-outline-secondary">Secondary</button>
+    <button class="btn btn-outline-success">Success</button>
+    <button class="btn btn-outline-danger">Danger</button>
+    <button class="btn btn-outline-info">Info</button>
+    <button class="btn btn-outline-light">Light</button>
+    <button class="btn btn-outline-dark">Dark</button>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="btn btn-primary btn-pill">Primary</button>
+    <button class="btn btn-outline-success btn-pill">Success</button>
+    <button class="btn btn-warning btn-pill">Warning</button>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+    <button class="btn btn-primary btn-xs">Extra Small</button>
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary">Medium</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="btn btn-primary">
+        <span class="icon">[i]</span>
+        Icon Left
+    </button>
+    <button class="btn btn-outline-secondary">
+        Icon Right
+        <span class="icon">[i]</span>
+    </button>
+    <button class="btn btn-success btn-lg">
+        <span class="icon">[i]</span>
+        Large Button
+    </button>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+    <button class="btn btn-icon btn-icon-sm btn-primary">
+        <span class="icon">[i]</span>
+    </button>
+    <button class="btn btn-icon btn-outline-secondary">
+        <span class="icon">[i]</span>
+    </button>
+    <button class="btn btn-icon btn-icon-lg btn-danger">
+        <span class="icon">[i]</span>
+    </button>
+    
+    <button class="btn btn-icon btn-icon-sm btn-primary btn-pill">
+        <span class="icon">[i]</span>
+    </button>
+    <button class="btn btn-icon btn-outline-secondary btn-pill">
+        <span class="icon">[i]</span>
+    </button>
+    <button class="btn btn-icon btn-icon-lg btn-danger btn-pill">
+        <span class="icon">[i]</span>
+    </button>
+</div>
+
+<div class="container py-5">
+    <div class="row g-5">
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card Title</h4>
+                    <p class="card-text">Это базовый .card-body. Простой, чистый и готовый к использованию.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    Card Header
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">Structured Card</h4>
+                    <p class="card-text">Используйте .card-header и .card-footer для разделения контента.</p>
+                </div>
+                <div class="card-footer">
+                    Card Footer
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card card-border-success">
+                <div class="card-body">
+                    <h4 class="card-title">Success Card</h4>
+                    <p class="card-text">Используйте .card-border-success для семантического выделения.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&q=80&w=400" class="card-img" alt="Laptop">
+                <div class="card-body">
+                    <h4 class="card-title">Image Card</h4>
+                    <p class="card-text">Класс .card-img идеально вписывает изображение сверху.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Image Card</h4>
+                    <p class="card-text">Используйте .card-img-bottom для размещения изображения внизу.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726c?ixlib=rb-4.0.3&q=80&w=400" class="card-img-bottom" alt="Retro Tech">
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&q=80&w=400" class="card-img" alt="Code">
+                <div class="card-img-overlay">
+                    <h4 class="card-title">Overlay Title</h4>
+                    <p class="card-text">Текст размещается поверх изображения с помощью .card-img-overlay.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&q=80&w=400" class="card-img-horizontal" alt="Code on screen">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title">Горизонтальная компоновка</h4>
+                            <p class="card-text">Это достигается использованием сетки (.row и .col-md-*) внутри .card.</p>
+                            <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container py-5" style="max-width: 600px;">
+    
+    <div class="form-group">
+        <label class="form-label" for="exampleEmail">Email Address</label>
+        <input type="email" class="form-control" id="exampleEmail" placeholder="you@example.com">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="examplePass">Password</label>
+        <input type="password" class="form-control" id="examplePass" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="exampleSelect">Select Menu</label>
+        <select class="form-select" id="exampleSelect">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="exampleTextarea">Textarea</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <input type="text" class="form-control form-control-sm mb-3" placeholder=".form-control-sm">
+    <input type="text" class="form-control mb-3" placeholder="Default .form-control">
+    <input type="text" class="form-control form-control-lg mb-3" placeholder=".form-control-lg">
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+    
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="check1">
+        <label class="form-check-label" for="check1">Default checkbox</label>
+    </div>
+    <div class="form-switch">
+        <input type="checkbox" class="form-check-input" id="switch1" checked>
+        <label class="form-check-label" for="switch1">Checked switch</label>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="input-group mb-3">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="Username">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Recipient's username">
+        <span class="input-group-text">@example.com</span>
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">$</span>
+        <input type="text" class="form-control">
+        <span class="input-group-text">.00</span>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <form class="row g-4 needs-validation" novalidate>
+        <div class="col-md-6">
+            <label for="validationCustom01" class="form-label">First name</label>
+            <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="validationCustom02" class="form-label">Last name</label>
+            <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="col-md-12">
+            <label for="validationCustomUsername" class="form-label">Username</label>
+            <div class="input-group">
+                <span class="input-group-text">@</span>
+                <input type="text" class="form-control" id="validationCustomUsername" required>
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+    </form>
+</div>
+<div class="container py-5" style="width: 100%;">
+    
+    <div class="alert alert-primary">
+        <strong>Primary:</strong> Это основной alert — проверьте его!
+    </div>
+    <div class="alert alert-success">
+        <strong>Success!</strong> Ваше действие выполнено успешно.
+    </div>
+    <div class="alert alert-warning">
+        <strong>Warning!</strong> Пожалуйста, обратите внимание на это.
+    </div>
+    <div class="alert alert-danger">
+        <strong>Error!</strong> Что-то пошло не так.
+    </div>
+    <div class="alert alert-info">
+        <strong>Info:</strong> Вот немного полезной информации.
+    </div>
+
+    <div class="alert alert-info">
+        <strong>Alert с ссылкой:</strong> Вы должны <a href="#" class="alert-link">прочитать это важное сообщение</a>.
+    </div>
+
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Отличная работа!</h4>
+        <p>Вы успешно прочитали это важное сообщение. Этот пример использует утилиты отступов и .alert-heading.</p>
+        <hr>
+        <p class="mb-0">Когда вам нужно, вы можете использовать и нижний параграф.</p>
+    </div>
+
+    <div class="alert alert-danger alert-dismissible">
+        <strong>Критическая ошибка!</strong> Вы можете закрыть это сообщение.
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <span class="badge badge-primary">Primary</span>
+    <span class="badge badge-secondary">Secondary</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-danger">Danger</span>
+    <span class="badge badge-warning">Warning</span>
+    <span class="badge badge-info">Info</span>
+    <span class="badge badge-dark">Dark</span>
+    <span class="badge badge-light">Light</span>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <span class="badge badge-light-primary">Primary</span>
+    <span class="badge badge-light-secondary">Secondary</span>
+    <span class="badge badge-light-success">Success</span>
+    <span class="badge badge-light-danger">Danger</span>
+    <span class="badge badge-light-warning">Warning</span>
+    <span class="badge badge-light-info">Info</span>
+    <span class="badge badge-light-dark">Dark</span>
+    <span class="badge badge-light-light">Light</span>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <span class="badge badge-outline badge-outline-primary">Primary</span>
+    <span class="badge badge-outline badge-outline-secondary">Secondary</span>
+    <span class="badge badge-outline badge-outline-success">Success</span>
+    <span class="badge badge-outline badge-outline-danger">Danger</span>
+    <span class="badge badge-outline badge-outline-warning">Warning</span>
+    <span class="badge badge-outline badge-outline-info">Info</span>
+    <span class="badge badge-outline badge-outline-dark">Dark</span>
+    <span class="badge badge-outline badge-outline-light">Light</span>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <span class="badge badge-primary badge-pill">Solid Pill</span>
+    <span class="badge badge-light-success badge-pill">Light Pill</span>
+    <span class="badge badge-outline badge-outline-danger badge-pill">Outline Pill</span>
+</div>
+
+<div class="container py-5" style="width: 100%;">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Логин</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Пользователь</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>John Doe</td>
+                <td><span class="badge badge-success">Active</span></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Jane Smith</td>
+                <td><span class="badge badge-success">Active</span></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>Bob Johnson</td>
+                <td><span class="badge badge-warning">Pending</span></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Продукт</th>
+                <th>Артикул</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Deca Widget</td>
+                <td>D-1000</td>
+                <td>$19.99</td>
+            </tr>
+            <tr>
+                <td>Deca Module</td>
+                <td>D-2000</td>
+                <td>$49.99</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-sm table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Имя</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td><span class="badge badge-sm badge-success">Active</span></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Jacob</td>
+                <td><span class="badge badge-sm badge-warning">Pending</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+    
+</div>
+
+<div class="container py-5" style="width: 100%;">
+
+    <nav class="navbar navbar-expand-lg" style="background: var(--deca-gray-100); padding: 1rem; border-radius: 12px;">
+        <a class="navbar-brand" href="#">DecaNav</a>
+        <div style="display: flex; flex-grow: 1; justify-content: space-between;">
+            <ul class="navbar-nav" style="margin-right: auto; flex-direction: row;">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+            </ul>
+            <form class="d-flex" style="gap: 0.5rem;">
+                <input class="form-control form-control-sm" type="search" placeholder="Search">
+                <button class="btn btn-primary btn-sm" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <br>
+
+    <nav class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active">Data</li>
+    </nav>
+
+    <br>
+
+    <ul class="pagination" style="justify-content: center;">
+        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+
+</div>
+
+<div class="container py-5" style="width: 100%;">
+
+    <div class="progress" style="width: 100%;">
+        <div class="progress-bar" style="width: 25%"></div>
+    </div>
+    <br>
+
+    <div class="progress-success mb-3">
+        <div class="progress-bar" style="width: 40%"></div>
+    </div>
+    <div class="progress-info mb-3">
+        <div class="progress-bar" style="width: 50%"></div>
+    </div>
+    <div class="progress-warning mb-3">
+        <div class="progress-bar" style="width: 60%"></div>
+    </div>
+    <div class="progress-danger mb-3">
+        <div class="progress-bar" style="width: 75%"></div>
+    </div>
+    
+    <br>
+
+    <div class="progress" style="width: 100%;">
+        <div class="progress-bar" style="width: 45%">45% Complete</div>
+    </div>
+
+    <br>
+
+    <div class="progress progress-sm mb-3">
+        <div class="progress-bar" style="width: 30%"></div>
+    </div>
+    <div class="progress mb-3">
+        <div class="progress-bar" style="width: 40%">Default</div>
+    </div>
+    <div class="progress progress-lg">
+        <div class="progress-bar" style="width: 50%">50% (Large)</div>
+    </div>
+    
+    <br>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" style="width: 65%"></div>
+    </div>
+
+    <br>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%">
+            Loading...
+        </div>
+    </div>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div class="spinner"></div>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div class="spinner-grow"></div>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div class="spinner spinner-primary"></div>
+    <div class="spinner spinner-secondary"></div>
+    <div class="spinner spinner-success"></div>
+    <div class="spinner spinner-danger"></div>
+    <div class="spinner spinner-warning"></div>
+    <div class="spinner spinner-info"></div>
+</div>
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div class="spinner-grow spinner-primary"></div>
+    <div class="spinner-grow spinner-secondary"></div>
+    <div class="spinner-grow spinner-success"></div>
+    <div class="spinner-grow spinner-danger"></div>
+    <div class="spinner-grow spinner-warning"></div>
+    <div class="spinner-grow spinner-info"></div>
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+    <div class="spinner spinner-sm spinner-primary"></div>
+    <div class="spinner spinner-primary"></div>
+    <div class="spinner spinner-lg spinner-primary"></div>
+</div>
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+    <div class="spinner-grow spinner-grow-sm spinner-success"></div>
+    <div class="spinner-grow spinner-success"></div>
+    <div class="spinner-grow spinner-grow-lg spinner-success"></div>
+</div>
+
+<div class="container py-5" style="width: 100%;">
+
+    <div class="p-3 mb-2 bg-primary text-white rounded">.bg-primary</div>
+    <div class="p-3 mb-2 bg-success text-white rounded">.bg-success</div>
+    <div class="p-3 mb-2 bg-light text-dark rounded">.bg-light (с .text-dark)</div>
+    <div class="p-3 mb-2 bg-dark text-white rounded">.bg-dark</div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div style="font-size: 1.1rem; font-weight: 500;">
+        <p class="text-primary">.text-primary</p>
+        <p class="text-secondary">.text-secondary</p>
+        <p class="text-success">.text-success</p>
+        <p class="text-danger">.text-danger</p>
+        <p class="text-warning">.text-warning</p>
+        <p class="text-info">.text-info</p>
+        <p class="text-white" style="background: #333; padding: 0 0.25rem;">.text-white</p>
+        <p class="text-light" style="background: #333; padding: 0 0.25rem;">.text-light</p>
+        <p class="text-dark">.text-dark</p>
+    </div>
+</div>
+<div class="container py-5" style="width: 100%;">
+
+    <h1>h1. Deca heading</h1>
+    <h2>h2. Deca heading</h2>
+    <h3>h3. Deca heading</h3>
+    <h4>h4. Deca heading</h4>
+    <h5>h5. Deca heading</h5>
+    <h6>h6. Deca heading</h6>
+    <hr style="margin: 1rem 0; border-color: var(--deca-gray-200);">
+    <h1 class="display-1">Display 1</h1>
+    <h1 class="display-4">Display 4</h1>
+    <h1 class="display-6">Display 6</h1>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <p class="lead">
+        Это "lead" параграф. Он крупнее и легче, идеально подходит для вступлений.
+    </p>
+    <p>
+        Это обычный параграф (<code>&lt;p&gt;</code>) для сравнения. Он содержит <code>inline code</code>.
+    </p>
+    <blockquote>
+        <p>"Deca Framework упростил наш рабочий процесс в десять раз."</p>
+        <footer>— Довольный Разработчик</footer>
+    </blockquote>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <p class="text-xs">.text-xs (0.75rem)</p>
+    <p class="text-sm">.text-sm (0.875rem)</p>
+    <p class="text-base">.text-base (1rem)</p>
+    <p class="text-lg">.text-lg (1.125rem)</p>
+    <p class="text-xl">.text-xl (1.25rem)</p>
+    <p class="text-2xl">.text-2xl (1.5rem)</p>
+    <p class="text-3xl">.text-3xl (1.875rem)</p>
+    <p class="text-5xl">.text-5xl (3rem)</p>
+    <p class="text-7xl">.text-7xl (4.5rem)</p>
+    
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <p class="font-thin">.font-thin (100)</p>
+    <p class="font-light">.font-light (300)</p>
+    <p class="font-normal">.font-normal (400)</p>
+    <p class="font-medium">.font-medium (500)</p>
+    <p class="font-semibold">.font-semibold (600)</p>
+    <p class="font-bold">.font-bold (700)</p>
+    <p class="font-black">.font-black (900)</p>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <p class="text-left">.text-left: Текст по левому краю.</p>
+    <p class="text-center">.text-center: Текст по центру.</p>
+    <p class="text-right">.text-right: Текст по правому краю.</p>
+    <hr style="margin: 1rem 0; border-color: var(--deca-gray-200);">
+    <p class="lowercase">.lowercase: ИЗ ПРОПИСНЫХ В СТРОЧНЫЕ</p>
+    <p class="uppercase">.uppercase: из строчных в прописные</p>
+    <p class="capitalize">.capitalize: первая буква каждого слова</p>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <p class="underline">.underline: Подчеркнутый текст.</p>
+    <p class="line-through">.line-through: Зачеркнутый текст.</p>
+    <p><a href="#" class="no-underline">.no-underline</a>: Ссылка без подчеркивания.</p>
+    <hr style="margin: 1rem 0; border-color: var(--deca-gray-200);">
+    <ul>
+        <li>Стандартный список ul</li>
+        <li>С вложенными элементами
+            <ul>
+                <li>Вложенный элемент</li>
+            </ul>
+        </li>
+    </ul>
+
+</div>
+
+<div class="container py-5">
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1.5rem;">
+    
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow-none">
+            .shadow-none
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow-sm">
+            .shadow-sm
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow">
+            .shadow (Base)
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow-md">
+            .shadow-md
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow-lg">
+            .shadow-lg
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow-xl">
+            .shadow-xl
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: white;" class="shadow-2xl">
+            .shadow-2xl
+        </div>
+        
+        <div style="padding: 2rem; border-radius: 0.5rem; text-align: center; background: var(--deca-gray-100);" class="shadow-inner">
+            .shadow-inner
+        </div>
+        
+    </div>
+</div>
+
+<div class="container py-5">
+
+    <div class="d-flex flex-row" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">2</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">3</div>
+    </div>
+    <div class="d-flex flex-column" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">2</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">3</div>
+    </div>
+    
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="d-flex justify-content-start" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">2</div>
+    </div>
+    <div class="d-flex justify-content-center" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">2</div>
+    </div>
+    <div class="d-flex justify-content-between" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">2</div>
+    </div>
+    <div class="d-flex justify-content-around" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">2</div>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="d-flex align-items-start" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 2rem 1rem; border-radius: 0.25rem;">2</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">3</div>
+    </div>
+    <div class="d-flex align-items-center" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 2rem 1rem; border-radius: 0.25rem;">2</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">3</div>
+    </div>
+    <div class="d-flex align-items-stretch" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 2rem 1rem; border-radius: 0.25rem;">2</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">3</div>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="d-flex" style="background: #f3f4f6; padding: 1rem; border-radius: 0.5rem; min-height: 120px; gap: 1rem; margin-bottom: 1rem;">
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">Item 1</div>
+        <div class="flex-grow-1" style="background: var(--deca-secondary); color: white; padding: 1rem; border-radius: 0.25rem;">.flex-grow-1</div>
+        <div style="background: var(--deca-primary); color: white; padding: 1rem; border-radius: 0.25rem;">Item 3</div>
+    </div>
+</div>
+
+<div class="container py-5" style="width: 100%;">
+
+    <div class="container py-16 text-center">
+        <h1 class="display-4 font-bold mb-4">Deca Framework</h1>
+        <p class="lead text-gray-700 mb-6" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+            Профессиональный UI-фреймворк для современной веб-разработки. Адаптивный и готовый к работе.
+        </p>
+        <div class="d-flex justify-content-center" style="gap: 1rem;">
+            <a href="#" class="btn btn-primary btn-lg">Начать</a>
+            <a href="#" class="btn btn-light btn-lg">Документация</a>
+        </div>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="container py-16">
+        <div class="row align-items-center g-6">
+            <div class="col-lg-6">
+                <h1 class="display-5 font-bold mb-4">Стройте быстрее, запускайте умнее.</h1>
+                <p class="lead text-gray-700 mb-6">Хватит изобретать велосипед. Deca предоставляет все компоненты, необходимые для создания красивых, адаптивных веб-сайтов.</p>
+                <a href="#" class="btn btn-primary btn-lg">Изучить компоненты</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop" alt="Команда работает" class="img-fluid rounded-xl shadow-lg">
+            </div>
+        </div>
+    </div>
+
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="container py-16">
+        <div class="row align-items-center g-6">
+            <div class="col-lg-6 order-lg-last">
+                <h1 class="display-5 font-bold mb-4">Полная интеграция с Deca.</h1>
+                <p class="lead text-gray-700 mb-6">Все шаблоны hero-секций построены с использованием стандартных утилит Deca, таких как Grid, Flexbox, Spacing и Typography.</p>
+                <a href="#" class="btn btn-secondary btn-lg">Изучить утилиты</a>
+            </div>
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop" alt="Команда за столом" class="img-fluid rounded-xl shadow-lg">
+            </div>
+        </div>
+    </div>
+    
+    <hr style="margin: 2rem 0; border-color: var(--deca-gray-200);">
+
+    <div class="bg-primary py-16 text-white text-center rounded-xl">
+        <div class="container">
+            <h1 class="display-4 font-bold mb-4" style="color: white;">Готовы к запуску?</h1>
+            <p class="lead mb-6" style="max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9; color: white;">
+                Начните с Deca сегодня и узнайте, почему это последний UI-фреймворк, который вам когда-либо понадобится.
+            </p>
+            <a href="#" class="btn btn-light btn-lg">Скачать</a>
+        </div>
+    </div>
+
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#demoModal">Открыть стандартную модалку</button>
+    <button class="btn btn-secondary" data-toggle="modal" data-target="#staticModal">Открыть статичную модалку</button>
+    <button class="btn btn-info" data-toggle="modal" data-target="#scrollableModal">Модалка с прокруткой</button>
+    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modalSm">Small (.modal-sm)</button>
+    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modalLg">Large (.modal-lg)</button>
+    <button class="btn btn-outline-primary" data-toggle="modal" data-target="#modalXl">Extra Large (.modal-xl)</button>
+    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#modalFullscreen">Fullscreen</button>
+</div>
+
+
+<div class="modal" id="demoModal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Стандартное модальное окно</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Это стандартное, центрированное модальное окно. Оно закрывается по нажатию 'Escape' или клику на фон.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="staticModal" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Статичный фон</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Это модальное окно имеет <code>data-backdrop="static"</code> и <code>data-keyboard="false"</code>. Его нельзя закрыть кликом на фон или кнопкой 'Escape'.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="scrollableModal">
+    <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Модалка с прокруткой</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Класс <code>.modal-dialog-scrollable</code> делает этот контент прокручиваемым.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et...</p>
+                <p>(Много текста для демонстрации прокрутки)</p>
+                <p>...</p>
+                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum...</p>
+                <p>...</p>
+                <p>Vestibulum id ligula porta felis euismod semper. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus...</p>
+                <p>...</p>
+                <p>Aenean lacinia bibendum nulla sed consectetur. Nullam id dolor id nibh ultricies vehicula ut id elit...</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalSm">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Small Modal</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><code>.modal-sm</code></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalLg">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Large Modal</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><code>.modal-lg</code></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalXl">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Extra Large Modal</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><code>.modal-xl</code></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modalFullscreen">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Fullscreen Modal</h3>
+                <button class="btn-close" data-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p><code>.modal-fullscreen</code></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5" style="max-width: 600px; width: 100%;">
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button">
+                    Элемент #1
+                </button>
+            </div>
+            <div class="accordion-collapse">
+                <div class="accordion-body">
+                    <strong>Это тело первого элемента.</strong> Ваш <code>index.js</code> управляет анимацией (slide up/down) этого контента.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed">
+                    Элемент #2
+                </button>
+            </div>
+            <div class="accordion-collapse">
+                <div class="accordion-body">
+                    <strong>Это тело второго элемента.</strong> Содержимое может быть любым, включая HTML-теги и другие компоненты.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="accordion" data-multiple="true">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button">
+                    Элемент #1 (Можно открыть)
+                </button>
+            </div>
+            <div class="accordion-collapse">
+                <div class="accordion-body">
+                    Этот элемент открыт, и он не закроется, если вы откроете второй.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed">
+                    Элемент #2 (Можно открыть)
+                </button>
+            </div>
+            <div class="accordion-collapse">
+                <div class="accordion-body">
+                    Теперь оба элемента могут быть открыты одновременно.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <br>
+
+    <div class="accordion accordion-flush">
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed">
+                    Элемент #1 (Flush)
+                </button>
+            </div>
+            <div class="accordion-collapse">
+                <div class="accordion-body">
+                    Обратите внимание, что нет внешних <code>border</code> или <code>border-radius</code>.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-header">
+                <button class="accordion-button collapsed">
+                    Элемент #2 (Flush)
+                </button>
+            </div>
+            <div class="accordion-collapse">
+                <div class="accordion-body">
+                    Только разделители между элементами.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container py-5" style="width: 100%;">
+
+    <ul class="nav-tabs" role="tablist">
+        <li><a href="#tab1-std" class="nav-link active" data-toggle="tab">Вкладка 1</a></li>
+        <li><a href="#tab2-std" class="nav-link" data-toggle="tab">Вкладка 2</a></li>
+        <li><a href="#tab3-std" class="nav-link" data-toggle="tab">Вкладка 3</a></li>
+    </ul>
+    <div class="tab-content" style="padding: 1.5rem; border: 1px solid var(--deca-gray-300); border-top: 0; border-radius: 0 0 0.5rem 0.5rem;">
+        <div class="tab-pane active" id="tab1-std">
+            <p>Контент для первой вкладки. Он плавно появляется благодаря <code>index.js</code>.</p>
+        </div>
+        <div class="tab-pane" id="tab2-std">
+            <p>Контент для второй вкладки. Попробуйте переключиться с помощью клавиш со стрелками.</p>
+        </div>
+        <div class="tab-pane" id="tab3-std">
+            <p>Контент для третьей вкладки.</p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <ul class="nav-pills" role="tablist">
+        <li><a href="#pill1" class="nav-link active" data-toggle="tab">Профиль</a></li>
+        <li><a href="#pill2" class="nav-link" data-toggle="tab">Настройки</a></li>
+        <li><a href="#pill3" class="nav-link" data-toggle="tab">Контакты</a></li>
+    </ul>
+    <div class="tab-content" style="padding: 1.5rem 0;">
+        <div class="tab-pane active" id="pill1">
+            <p>Контент вкладки "Профиль".</p>
+        </div>
+        <div class="tab-pane" id="pill2">
+            <p>Контент вкладки "Настройки".</p>
+        </div>
+        <div class="tab-pane" id="pill3">
+            <p>Контент вкладки "Контакты".</p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="row" style="width: 100%; margin-bottom: 2rem;">
+        <div class="col-md-3">
+            <ul class="nav-pills nav-vertical" role="tablist">
+                <li><a href="#vert-pill-1" class="nav-link active" data-toggle="tab">Вертикальный Pill 1</a></li>
+                <li><a href="#vert-pill-2" class="nav-link" data-toggle="tab">Вертикальный Pill 2</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="tab-content">
+                <div class="tab-pane active" id="vert-pill-1">
+                    <h4>Контент 1</h4>
+                    <p>Контент для первого pill.</p>
+                </div>
+                <div class="tab-pane" id="vert-pill-2">
+                    <h4>Контент 2</h4>
+                    <p>Контент для второго pill.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row" style="width: 100%;">
+        <div class="col-md-3">
+            <ul class="nav-tabs nav-vertical" role="tablist">
+                <li><a href="#vert-tab-1" class="nav-link active" data-toggle="tab">Вертикальный Tab 1</a></li>
+                <li><a href="#vert-tab-2" class="nav-link" data-toggle="tab">Вертикальный Tab 2</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="tab-content" style="padding: 1.5rem; border: 1px solid var(--deca-gray-300); border-left: 0;">
+                <div class="tab-pane active" id="vert-tab-1">
+                    <h4>Контент 1</h4>
+                    <p>Контент для первого tab.</p>
+                </div>
+                <div class="tab-pane" id="vert-tab-2">
+                    <h4>Контент 2</h4>
+                    <p>Контент для второго tab.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="padding: 1rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+    <div class="dropdown">
+        <button class="btn btn-primary" data-toggle="dropdown">
+            Dropdown Menu
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Ссылка 1</a>
+            <a class="dropdown-item" href="#">Ссылка 2</a>
+            <a class="dropdown-item" href="#">Ссылка 3</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary" data-toggle="dropdown">
+            Меню справа
+        </button>
+        <div class="dropdown-menu dropdown-menu-end">
+            <a class="dropdown-item" href="#">Действие</a>
+            <a class="dropdown-item" href="#">Другое действие</a>
+        </div>
+    </div>
+    
+    <div class="dropup">
+        <button class="btn btn-info" data-toggle="dropdown">
+            Меню вверх (Dropup)
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Действие</a>
+            <a class="dropdown-item" href="#">Другое действие</a>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button class="btn btn-outline-primary" data-toggle="dropdown">
+            Меню с контентом
+        </button>
+        <div class="dropdown-menu">
+            <div class="dropdown-header">Категория 1</div>
+            <a class="dropdown-item" href="#">Ссылка (a)</a>
+            <button type="button" class="dropdown-item">Действие (button)</button>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-header">Категория 2</div>
+            <a class="dropdown-item active" href="#">Активный (active)</a>
+            <a class="dropdown-item disabled" href="#">Выключенный (disabled)</a>
+            <button type="button" class="dropdown-item" disabled>Выключенная (button)</button>
+        </div>
+    </div>
+</div>
+
+<script src="index.js"></script>
+
+
+</body>
+</html>

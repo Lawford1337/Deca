@@ -3980,3 +3980,38 @@ html[data-theme="dark"] {
         border: 1px solid var(--deca-gray-700);
     }
 }
+
+/* ========================================
+   DEMO STYLES (Для .grid-demo-col)
+   ======================================== */
+
+/* Стиль для ДЕМОНСТРАЦИИ (Blueprint Style) */
+.grid-demo-col {
+    padding: var(--deca-space-3) var(--deca-space-4);
+    background: rgba(99, 102, 241, 0.05); /* Легкий фон */
+    border: 1px dashed rgba(99, 102, 241, 0.4); /* Пунктирная граница */
+    border-radius: var(--deca-rounded-lg);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: var(--deca-text-sm);
+    font-weight: 500;
+}
+
+/* Специальный стиль для демонстрации смещения (offset) */
+.grid-demo-col-offset {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px dashed rgba(139, 92, 246, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Специальный стиль для демонстрации порядка (order) */
+.grid-demo-col-order {
+    background: rgba(236, 72, 153, 0.1);
+    border: 1px dashed rgba(236, 72, 153, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* * ПРИМЕЧАНИЕ: Если вы тестируете на СВЕТЛОМ фоне, 
+ * эти стили могут выглядеть иначе. 
+ * Они были созданы для темного фона.
+*/

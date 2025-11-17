@@ -572,26 +572,41 @@
             color: #a78bfa;
         }
 
-        /* Responsive */
+        /* ========================================
+           RESPONSIVE & MOBILE (ИСПРАВЛЕНО)
+           ======================================== */
+        
         @media (max-width: 1024px) {
+            /* 1. Скрываем десктопную боковую панель */
             .sidebar {
                 transform: translateX(-100%);
+                z-index: 2000; /* Должна быть поверх контента */
             }
 
+            /* 2. ИСПРАВЛЕНО: Показываем боковую панель, когда JS добавляет класс .active */
             .sidebar.active {
                 transform: translateX(0);
                 box-shadow: 10px 0 50px rgba(0, 0, 0, 0.5);
             }
 
+            /* 3. Контент и футер теперь занимают 100% ширины */
             .main-content,
             .docs-footer {
                 margin-left: 0;
             }
 
+            /* 4. Показываем мобильную кнопку-бургер */
             .mobile-toggle {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+            }
+            
+            /* 5. ИСПРАВЛЕНО: Скрываем верхнее меню на том же брейкпоинте,
+                  что и боковую панель, чтобы избежать конфликтов.
+            */
+            .nav-menu {
+                display: none;
             }
         }
 
